@@ -41,7 +41,7 @@ $dc_promo_slides = [
     <div class="dc-slider" data-dc-slider data-autoplay="5000">
         <div class="dc-slider__view">
             <div class="dc-slider__track">
-                <?php foreach ($dc_promo_slides as $dc_s) : ?>
+                <?php foreach ($dc_promo_slides as $dc_i => $dc_s) : ?>
                 <div class="dc-slider__slide">
                     <div class="dc-promo dc-promo--<?php echo esc_attr($dc_s['theme']); ?>">
                         <div class="dc-promo__top">
@@ -60,7 +60,7 @@ $dc_promo_slides = [
                                 </div>
                             </div>
                             <div class="dc-promo__img">
-                                <img src="<?php echo esc_url(mbgroupltd_image($dc_s['image'])); ?>" alt="<?php echo esc_attr($dc_s['title']); ?>" loading="eager" fetchpriority="high" decoding="async">
+                                <img src="<?php echo esc_url(mbgroupltd_image($dc_s['image'])); ?>" alt="<?php echo esc_attr($dc_s['title']); ?>" width="280" height="280" <?php echo $dc_i === 0 ? 'fetchpriority="high" decoding="async"' : 'loading="lazy" decoding="async"'; ?>>
                             </div>
                         </div>
                         <div class="dc-promo__foot">

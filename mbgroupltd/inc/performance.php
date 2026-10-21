@@ -13,9 +13,8 @@ if (!defined('ABSPATH')) {
  */
 add_action('wp_head', static function () {
     $origins = [
+        'https://fonts.googleapis.com',
         'https://fonts.gstatic.com',
-        'https://cdn.jsdelivr.net',
-        'https://cdnjs.cloudflare.com',
     ];
     foreach ($origins as $origin) {
         $cross = (strpos($origin, 'gstatic') !== false || strpos($origin, 'cdn') !== false) ? ' crossorigin' : '';
@@ -45,6 +44,7 @@ add_filter('style_loader_tag', static function ($html, $handle) {
         'wp-block-library',
         'classic-theme-styles',
         'global-styles',
+        'google-fonts',
     ];
     if (!in_array($handle, $defer_handles, true)) {
         return $html;
@@ -102,8 +102,6 @@ add_action('wp_enqueue_scripts', static function () {
 }, 100);
 
 /**
- * NOTE: analytics pixels (GA/GTM/Meta/TikTok) load once, immediately, from
- * header.php. A previous version also re-injected the same IDs lazily here,
- * causing double PageViews - removed 2026-10-14. Do not re-add lazy pixel
- * loading without removing the header tags first.
+ * Analytics (GA, GTM, Meta, TikTok) load once from template-parts/site-tracking.php,
+ * after the window load event. Do not also inject them here.
  */

@@ -34,14 +34,15 @@ function mbgroupltd_enqueue_styles()
     // the quote plugins enqueue their own copy where they need it.
     // Tailwind utilities come from main.css plus the plugin CDN.
 
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Patua+One&family=Nunito+Sans:wght@400;600;700;800&family=Open+Sans:wght@400;600&display=swap', [], null);
-
-    wp_enqueue_style('font-awesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css', [], null);
+    // Open Sans dropped: the design system uses Nunito Sans and Patua One only.
+    // Font Awesome dropped: no template uses icon classes, and all.min.css
+    // blocked first paint.
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css2?family=Patua+One&family=Nunito+Sans:wght@400;600;700;800&display=swap', [], null);
 
     wp_enqueue_style(
         'main-style',
         get_template_directory_uri() . '/assets/css/main.css',
-        ['font-awesome'],
+        [],
         filemtime(get_template_directory() . '/assets/css/main.css')
     );
 

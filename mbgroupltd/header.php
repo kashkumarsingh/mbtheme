@@ -81,9 +81,9 @@
                     }
                 }
                 if ($logo_url) {
-                    echo '<img width="280" src="' . esc_url($logo_url) . '" alt="' . esc_attr(get_bloginfo('name')) . '" loading="eager" fetchpriority="high">';
+                    echo '<img width="280" height="64" src="' . esc_url($logo_url) . '" alt="' . esc_attr(get_bloginfo('name')) . '" decoding="async">';
                 } else {
-                    echo '<img width="280" src="' . esc_url(mbgroupltd_image('logo-meraboiler.png')) . '" alt="' . esc_attr(get_bloginfo('name')) . '" loading="eager" fetchpriority="high">';
+                    echo '<img width="280" height="64" src="' . esc_url(mbgroupltd_image('logo-meraboiler.png')) . '" alt="' . esc_attr(get_bloginfo('name')) . '" decoding="async">';
                 }
                 ?>
             </a>
@@ -156,9 +156,9 @@
             <a class="dc-drawer__logo" href="<?php echo esc_url(home_url('/')); ?>" aria-label="<?php echo esc_attr(get_bloginfo('name')); ?> Home" data-dc-drawer__close>
                 <?php
                 if (!empty($logo_url)) {
-                    echo '<img width="280" src="' . esc_url($logo_url) . '" alt="' . esc_attr(get_bloginfo('name')) . '" loading="eager" fetchpriority="high">';
+                    echo '<img width="180" height="42" src="' . esc_url($logo_url) . '" alt="" loading="lazy" decoding="async">';
                 } else {
-                    echo '<img width="280" src="' . esc_url(mbgroupltd_image('logo-meraboiler.png')) . '" alt="' . esc_attr(get_bloginfo('name')) . '" loading="eager" fetchpriority="high">';
+                    echo '<img width="180" height="42" src="' . esc_url(mbgroupltd_image('logo-meraboiler.png')) . '" alt="" loading="lazy" decoding="async">';
                 }
                 ?>
             </a>
