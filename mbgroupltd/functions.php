@@ -114,6 +114,28 @@ function mbgroupltd_enqueue_styles()
 
 add_action('wp_enqueue_scripts', 'mbgroupltd_enqueue_styles');
 
+/**
+ * The quote plugin's first field is a select with no label. That is the
+ * only failure in Lighthouse's agent accessibility-tree audit.
+ */
+add_filter('do_shortcode_tag', static function ($output, $tag) {
+    if ($tag !== 'cqf_quote_form' || !is_string($output) || $output === '') {
+        return $output;
+    }
+
+    return preg_replace_callback('/<select\b([^>]*)>/i', static function ($matches) {
+        $attrs = $matches[1];
+        if (preg_match('/\saria-(label|labelledby)=/i', $attrs)) {
+            return $matches[0];
+        }
+        $name = 'Service type';
+        if (preg_match('/\sname="([^"]+)"/', $attrs, $name_match)) {
+            $name = ucwords(str_replace(['_', '-'], ' ', $name_match[1]));
+        }
+        return '<select aria-label="' . esc_attr($name) . '"' . $attrs . '>';
+    }, $output);
+}, 10, 2);
+
 
 
 // Enqueue Scripts

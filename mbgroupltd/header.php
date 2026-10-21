@@ -113,7 +113,7 @@
                                 $is_active = in_array('current-menu-item', $item->classes) ? 'active' : '';
                                 if (empty($child_items)) {
                                     echo '<li class="nav-item">';
-                                    echo '<a class="nav-link ' . esc_attr($is_active) . '" href="' . esc_url($item->url) . '" aria-current="' . ($is_active ? 'page' : '') . '">' . esc_html($item->title) . '</a>';
+                                    echo '<a class="nav-link ' . esc_attr($is_active) . '" href="' . esc_url($item->url) . '"' . ($is_active ? ' aria-current="page"' : '') . '>' . esc_html($item->title) . '</a>';
                                     echo '</li>';
                                 } else {
                                     $many = count($child_items) > 6 ? ' has-many' : '';
