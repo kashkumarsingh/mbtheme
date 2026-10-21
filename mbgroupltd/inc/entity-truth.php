@@ -73,9 +73,13 @@ function mbgroupltd_sanitize_entity_text($text)
 
     $out = str_ireplace(array_keys($replacements), array_values($replacements), $text);
 
-    // Strip leftover “0% finance” marketing (including struck-through HTML).
-    $out = preg_replace('#<span[^>]*>\s*0%\s*finance[^<]*</span>#i', '', $out);
-    $out = preg_replace('/\b0%\s*finance\b/i', 'fixed-price quotes', $out);
+    // Keep the phrase on the finance guide. Elsewhere it is not an offer we make.
+    $path = strtolower((string) wp_parse_url((string) ($_SERVER['REQUEST_URI'] ?? ''), PHP_URL_PATH));
+    $finance_guide = str_contains(trailingslashit($path), '/blog/boiler-finance-london-pay-monthly-0-interest/');
+    if (!$finance_guide) {
+        $out = preg_replace('#<span[^>]*>\s*0%\s*finance[^<]*</span>#i', '', $out);
+        $out = preg_replace('/\b0%\s*finance\b/i', 'fixed-price quotes', $out);
+    }
 
     return $out;
 }

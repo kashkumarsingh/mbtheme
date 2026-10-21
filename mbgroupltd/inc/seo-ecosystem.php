@@ -349,9 +349,8 @@ if (!function_exists('mbgroupltd_legacy_seo_redirects')) {
             '/emergency-boiler-repair-north-coventry/' => '/emergency-boiler-repair-coventry/',
             '/emergency-boiler-repair-north-liverpool/' => '/emergency-boiler-repair-liverpool/',
             '/boiler-install-repair-in-north-london/' => '/boiler-repair-north-london/',
-            '/blog/mera-boiler-finance-london-pay-monthly-0-interest/' => '/fixed-price-boiler-installation/',
-            '/mera-boiler-finance-london-pay-monthly-0-interest/' => '/fixed-price-boiler-installation/',
-            '/blog/boiler-finance-london-pay-monthly-0-interest/' => '/fixed-price-boiler-installation/',
+            '/blog/mera-boiler-finance-london-pay-monthly-0-interest/' => '/blog/boiler-finance-london-pay-monthly-0-interest/',
+            '/mera-boiler-finance-london-pay-monthly-0-interest/' => '/blog/boiler-finance-london-pay-monthly-0-interest/',
             '/promotion/' => '/',
             '/boilers/' => '/boiler-installation/',
             '/scottish-power-boiler-service/' => '/boiler-service-london/',
@@ -425,6 +424,7 @@ if (!function_exists('mbgroupltd_gsc_title_overrides')) {
             '/emergency-boiler-repair-potters-bar/' => 'Emergency Boiler Repair Potters Bar | 020 8150 2025',
             '/boiler-installation-london/' => 'Boiler Installation London | Gas Safe, Fixed Price',
             '/' => 'Meraboiler | Boiler Installation and Reviews',
+            '/blog/boiler-finance-london-pay-monthly-0-interest/' => '0% Boiler Finance Explained | What to Check',
         ];
     }
 }
@@ -444,6 +444,7 @@ if (!function_exists('mbgroupltd_gsc_description_overrides')) {
             '/emergency-boiler-repair-potters-bar/' => 'Emergency boiler repair in Potters Bar. Same-day Gas Safe engineer and a fixed quote. Call 020 8150 2025.',
             '/boiler-installation-london/' => 'Fixed-price boiler installation in London. Gas Safe fitting and a written quote before we start.',
             '/' => 'Meraboiler reviews and fixed-price boiler installation from £1,680. Gas Safe engineers. Call 020 8150 2025.',
+            '/blog/boiler-finance-london-pay-monthly-0-interest/' => 'A guide to 0% boiler finance: what the offer means, what to check in the terms, and how a fixed-price quote compares. Call 020 8150 2025.',
         ];
     }
 }

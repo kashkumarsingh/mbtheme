@@ -15,6 +15,7 @@ $dc_quote_shortcode = '[cqf_quote_form]';
         </div>
         <p class="dc-hero__links">
             <a href="<?php echo esc_url(home_url('/fixed-price-boiler-installation/')); ?>">Fixed-price boiler installation</a>
+            <a href="<?php echo esc_url(home_url('/blog/boiler-finance-london-pay-monthly-0-interest/')); ?>">0% boiler finance, explained</a>
         </p>
         <div class="dc-hero__fine">*Price and model subject to terms and conditions. Guarantee length depends on boiler model and registration, and stays valid only with yearly servicing (servicing not included).</div>
     </div>
