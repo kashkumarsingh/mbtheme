@@ -349,8 +349,9 @@ if (!function_exists('mbgroupltd_legacy_seo_redirects')) {
             '/emergency-boiler-repair-north-coventry/' => '/emergency-boiler-repair-coventry/',
             '/emergency-boiler-repair-north-liverpool/' => '/emergency-boiler-repair-liverpool/',
             '/boiler-install-repair-in-north-london/' => '/boiler-repair-north-london/',
-            '/blog/mera-boiler-finance-london-pay-monthly-0-interest/' => '/blog/boiler-finance-london-pay-monthly-0-interest/',
-            '/mera-boiler-finance-london-pay-monthly-0-interest/' => '/blog/boiler-finance-london-pay-monthly-0-interest/',
+            '/blog/mera-boiler-finance-london-pay-monthly-0-interest/' => '/fixed-price-boiler-installation/',
+            '/mera-boiler-finance-london-pay-monthly-0-interest/' => '/fixed-price-boiler-installation/',
+            '/blog/boiler-finance-london-pay-monthly-0-interest/' => '/fixed-price-boiler-installation/',
             '/promotion/' => '/',
             '/boilers/' => '/boiler-installation/',
             '/scottish-power-boiler-service/' => '/boiler-service-london/',
@@ -423,8 +424,7 @@ if (!function_exists('mbgroupltd_gsc_title_overrides')) {
             '/boiler-service-potters-bar/' => 'Boiler Servicing Potters Bar | Call 020 8150 2025',
             '/emergency-boiler-repair-potters-bar/' => 'Emergency Boiler Repair Potters Bar | 020 8150 2025',
             '/boiler-installation-london/' => 'Boiler Installation London | Gas Safe, Fixed Price',
-            '/' => 'Meraboiler | Boiler Installation, Reviews and 0% Finance',
-            '/blog/boiler-finance-london-pay-monthly-0-interest/' => '0% Boiler Finance | Pay Monthly, Gas Safe',
+            '/' => 'Meraboiler | Boiler Installation and Reviews',
         ];
     }
 }
@@ -434,7 +434,7 @@ if (!function_exists('mbgroupltd_gsc_description_overrides')) {
     {
         return [
             '/contact-us/' => 'Gas Safe boiler repair and installation in North London and Potters Bar. Call 020 8150 2025 for a fixed-price quote.',
-            '/boiler-installation-north-london/' => 'Fixed-price boiler installation in North London. Gas Safe engineers, next-day fitting and 0% finance. Call 020 8150 2025.',
+            '/boiler-installation-north-london/' => 'Fixed-price boiler installation in North London. Gas Safe engineers and next-day fitting. Call 020 8150 2025.',
             '/boiler-repair-north-london/' => 'Boiler repair across North London and Potters Bar. Same-day Gas Safe callouts and a fixed price before any work starts.',
             '/boiler-service-north-london/' => 'Annual boiler servicing in North London. Gas Safe engineers, fixed price, landlord and homeowner visits.',
             '/emergency-boiler-repair-north-london/' => 'Emergency boiler repair in North London. Same-day Gas Safe engineer, fixed quote, no call-out surprise.',
@@ -442,9 +442,8 @@ if (!function_exists('mbgroupltd_gsc_description_overrides')) {
             '/boiler-repair-potters-bar/' => 'Boiler repair in Potters Bar. Same-day Gas Safe callout, fixed price, and reviews from local homeowners. Call 020 8150 2025.',
             '/boiler-service-potters-bar/' => 'Boiler servicing in Potters Bar. Gas Safe, fixed price, and reviews from local homeowners. Call 020 8150 2025.',
             '/emergency-boiler-repair-potters-bar/' => 'Emergency boiler repair in Potters Bar. Same-day Gas Safe engineer and a fixed quote. Call 020 8150 2025.',
-            '/boiler-installation-london/' => 'Fixed-price boiler installation in London. Gas Safe fitting, 0% finance and a written quote before we start.',
-            '/' => 'Meraboiler reviews, fixed-price boiler installation from £1,680 and 0% boiler finance. Gas Safe engineers. Call 020 8150 2025.',
-            '/blog/boiler-finance-london-pay-monthly-0-interest/' => '0% boiler finance on a new boiler from £1,680. Pay monthly, Gas Safe installation, fixed price before we start. Call 020 8150 2025.',
+            '/boiler-installation-london/' => 'Fixed-price boiler installation in London. Gas Safe fitting and a written quote before we start.',
+            '/' => 'Meraboiler reviews and fixed-price boiler installation from £1,680. Gas Safe engineers. Call 020 8150 2025.',
         ];
     }
 }
