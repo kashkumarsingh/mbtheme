@@ -1,0 +1,995 @@
+/* -- MeraBoiler new design: homepage sections (front page only) -- */
+
+.dc-h2,
+.dc-hiw h2,
+.dc-boilers h2 {
+    font-size: 38px;
+    margin-bottom: 8px;
+}
+
+.dc-sub {
+    margin: 0 0 32px;
+    font-size: 16px;
+}
+
+.dc-sub.muted {
+    color: var(--dc-muted);
+}
+
+/* -- Hero -- */
+.dc-hero,
+.dc-services,
+.dc-areas,
+.dc-faq {
+    padding: 72px 0;
+    background: var(--dc-bg);
+}
+
+.dc-hero__grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 64px;
+    align-items: center;
+}
+
+.dc-hero__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dc-hero h1 {
+    font-size: 58px;
+    line-height: 1.08;
+}
+
+.dc-hero__lead {
+    font-size: 19px;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 560px;
+    color: var(--dc-muted);
+}
+
+.dc-hero__points {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-weight: 600;
+}
+
+.dc-hero__points div {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.dc-hero__fine {
+    font-size: 12px;
+    color: var(--dc-muted);
+}
+
+.dc-quote {
+    padding: 28px;
+    border-top: 4px solid var(--dc-red);
+    box-shadow: var(--dc-shadow-card);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: var(--dc-white);
+    border-left: 1px solid var(--dc-line);
+    border-right: 1px solid var(--dc-line);
+    border-bottom: 1px solid var(--dc-line);
+    border-radius: 0 0 12px 12px;
+}
+
+.dc-quote h2 {
+    font-size: 26px;
+}
+
+.dc-quote__fine {
+    font-size: 13px;
+    text-align: center;
+    color: var(--dc-muted);
+}
+
+/* Quote plugin form inside the hero card */
+.dc-quote .cqf_quote_form,
+.dc-quote form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin: 0;
+}
+
+.dc-quote input[type="text"],
+.dc-quote input[type="email"],
+.dc-quote input[type="tel"],
+.dc-quote input[type="number"],
+.dc-quote input:not([type]),
+.dc-quote select,
+.dc-quote textarea {
+    height: 48px;
+    border: 1px solid var(--dc-input-border);
+    border-radius: var(--dc-r-sm);
+    padding: 0 14px;
+    font-family: var(--dc-font-body);
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    background: var(--dc-white);
+    color: var(--dc-navy);
+}
+
+.dc-quote textarea {
+    height: auto;
+    min-height: 96px;
+    padding: 12px 14px;
+}
+
+.dc-quote label {
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.dc-quote button[type="submit"],
+.dc-quote input[type="submit"],
+.dc-quote .cqf-submit-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0 22px;
+    border-radius: var(--dc-r-sm);
+    background: var(--dc-red);
+    color: var(--dc-white);
+    font-weight: 800;
+    font-size: 16px;
+    border: 0;
+    cursor: pointer;
+    width: 100%;
+}
+
+.dc-quote button[type="submit"]:hover,
+.dc-quote input[type="submit"]:hover {
+    background: var(--dc-red-dark);
+}
+
+/* -- Trust strip -- */
+.dc-trust {
+    padding: 28px 0;
+    background: var(--dc-white);
+    border-bottom: 1px solid var(--dc-line);
+}
+
+.dc-trust__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+/* -- Promo offer cards -- */
+.dc-promos,
+.dc-quotes,
+.dc-articles {
+    padding: 72px 0;
+    background: var(--dc-white);
+}
+
+/* -- Promo offers slider -- */
+/* Slides are laid out side-by-side from first paint, so enabling the
+   slider never causes a zoom/snap (no layout shift on load). */
+.dc-slider {
+    position: relative;
+}
+
+.dc-slider__view {
+    overflow: hidden;
+    border-radius: var(--dc-r-lg);
+}
+
+.dc-slider__track {
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 24px;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+/* 1 card on small screens, 2 side-by-side on desktop (see JS perView). */
+.dc-slider__slide {
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Equal-height cards: each promo fills its slide so both offers match. */
+.dc-slider__slide > .dc-promo {
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+@media (min-width: 821px) {
+    .dc-slider__slide {
+        flex-basis: calc((100% - 24px) / 2);
+        width: calc((100% - 24px) / 2);
+        max-width: calc((100% - 24px) / 2);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .dc-slider__track {
+        transition: none;
+    }
+}
+
+.dc-promo {
+    border-radius: var(--dc-r-lg);
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-height: 340px;
+}
+
+.dc-promo--dark {
+    background: var(--dc-navy);
+    color: var(--dc-white);
+}
+
+.dc-promo--light {
+    background: var(--dc-bg);
+    color: var(--dc-navy);
+}
+
+.dc-promo__top {
+    display: flex;
+    gap: 24px;
+}
+
+.dc-promo__copy {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    min-width: 0;
+    flex: 1;
+}
+
+.dc-promo__flags {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: wrap;
+    min-height: 30px;
+}
+
+.dc-promo__flag {
+    color: var(--dc-white);
+    font-weight: 800;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    padding: 6px 12px;
+    border-radius: var(--dc-pill);
+}
+
+.dc-promo__flag--red { background: var(--dc-red); }
+.dc-promo__flag--blue { background: var(--dc-blue); }
+
+.dc-promo__ends {
+    font-size: 12px;
+}
+
+.dc-promo--dark .dc-promo__ends,
+.dc-promo--dark .dc-promo__price-label { color: rgba(255, 255, 255, 0.8); }
+.dc-promo--light .dc-promo__ends,
+.dc-promo--light .dc-promo__price-label { color: var(--dc-muted); }
+
+.dc-promo h3 {
+    font-size: 32px;
+    line-height: 1.12;
+    min-height: 72px;
+}
+
+.dc-promo__points {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.dc-promo__points div {
+    display: flex;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 15px;
+    align-items: center;
+}
+
+.dc-promo__img {
+    background: var(--dc-white);
+    border-radius: var(--dc-r-lg);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    flex: none;
+    align-self: stretch;
+}
+
+.dc-promo__img img {
+    width: 100%;
+    height: 100%;
+    max-height: 230px;
+    object-fit: contain;
+    display: block;
+}
+
+.dc-promo__foot {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 14px;
+    margin-top: auto;
+    padding-top: 18px;
+}
+
+.dc-promo--dark .dc-promo__foot { border-top: 1px solid rgba(255, 255, 255, 0.2); }
+.dc-promo--light .dc-promo__foot { border-top: 1px solid var(--dc-line); }
+
+.dc-promo__price-label {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.dc-promo__price--sm {
+    font-family: var(--dc-font-head);
+    font-size: 26px;
+    line-height: 1.15;
+}
+
+/* -- How it works -- */
+.dc-hiw {
+    padding: 72px 0;
+    background: var(--dc-navy);
+    color: var(--dc-white);
+}
+
+.dc-hiw__sub {
+    margin: 0 0 32px;
+    font-size: 16px;
+    opacity: 0.85;
+}
+
+.dc-hiw__steps {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.dc-hiw__step {
+    position: relative;
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding-top: 4px;
+}
+
+.dc-hiw__icon {
+    width: 72px;
+    height: 72px;
+    border-radius: var(--dc-circle);
+    background: var(--dc-blue);
+    border: 2px solid var(--dc-sky);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: none;
+}
+
+.dc-hiw__arrow {
+    flex: none;
+    margin-top: 24px;
+}
+
+.dc-hiw__ghost {
+    position: absolute;
+    top: -14px;
+    right: 0;
+    font-family: var(--dc-font-head);
+    font-size: 150px;
+    line-height: 1;
+    color: rgba(255, 255, 255, 0.08);
+}
+
+.dc-hiw__label {
+    color: var(--dc-sky);
+    font-weight: 800;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+}
+
+.dc-hiw__title {
+    font-size: 24px;
+    display: block;
+    margin-bottom: 6px;
+    font-family: var(--dc-font-head);
+}
+
+.dc-hiw__desc {
+    opacity: 0.85;
+    line-height: 1.5;
+    max-width: 300px;
+}
+
+/* -- Services grid -- */
+.dc-services h2,
+.dc-areas h2,
+.dc-quotes h2,
+.dc-faq h2,
+.dc-articles h2 {
+    font-size: 38px;
+    margin-bottom: 32px;
+}
+
+.dc-service img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+
+.dc-service__body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+
+.dc-service__body h3 {
+    font-size: 20px;
+}
+
+.dc-service__price {
+    font-weight: 800;
+}
+
+.dc-service__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+    margin-top: 8px;
+}
+
+.dc a.dc-link-red {
+    color: var(--dc-red);
+    font-weight: 800;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 3px;
+}
+
+.dc a.dc-link-red:hover {
+    color: var(--dc-red-dark);
+}
+
+/* -- Brands -- */
+.dc-brands {
+    padding: 72px 0 0;
+    background: var(--dc-white);
+}
+
+.dc-brands__eyebrow {
+    text-align: center;
+    font-weight: 800;
+    font-size: 13px;
+    margin-bottom: 16px;
+    color: var(--dc-muted);
+}
+
+.dc-brands__card {
+    height: 110px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 16px;
+}
+
+.dc-brands__card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* -- Boiler products -- */
+.dc-boilers {
+    padding: 56px 0 72px;
+    background: var(--dc-white);
+}
+
+.dc-boiler {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.dc-boiler img {
+    width: 100%;
+    height: 190px;
+    object-fit: contain;
+    background: var(--dc-bg);
+    border-radius: var(--dc-r-sm);
+}
+
+.dc-boiler__brand {
+    font-size: 13px;
+    margin-top: 8px;
+    color: var(--dc-muted);
+}
+
+.dc-service__desc,
+.dc-boiler__spec {
+    font-size: 14px;
+    color: var(--dc-muted);
+}
+
+.dc-boiler__price {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+}
+
+.dc-boiler__price strong {
+    font-family: var(--dc-font-head);
+    font-size: 30px;
+    font-weight: 400;
+}
+
+.dc-boiler__from {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dc-muted);
+}
+
+.dc-boiler .dc-btn {
+    margin-top: 8px;
+    width: 100%;
+}
+
+/* -- Areas -- */
+.dc-areas__card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 16px;
+    font-weight: 700;
+    min-height: 20px;
+    color: var(--dc-navy);
+}
+
+.dc-areas__card::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    flex: none;
+    background: currentColor;
+    opacity: 0.55;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M9 6l6 6-6 6'/%3E%3C/svg%3E") center / contain no-repeat;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.dc-areas__card:hover::after,
+.dc-areas__card:focus-visible::after {
+    opacity: 1;
+    transform: translateX(2px);
+}
+
+/* -- Testimonials -- */
+.dc-review p {
+    margin: 0 0 16px;
+    line-height: 1.5;
+}
+
+.dc-review b:first-of-type {
+    display: block;
+}
+
+/* Linear rail slider: 3 cards on desktop, 1 on small screens (see JS perView). */
+.dc-rail {
+    position: relative;
+}
+
+.dc-rail__view {
+    overflow: hidden;
+    border-radius: var(--dc-r-lg);
+}
+
+.dc-rail__track {
+    display: flex;
+    flex-wrap: nowrap;
+    column-gap: 24px;
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+.dc-rail__slide {
+    flex: 0 0 calc((100% - 48px) / 3);
+    max-width: calc((100% - 48px) / 3);
+    min-width: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.dc-rail__slide > .dc-review {
+    flex: 1 1 auto;
+    width: 100%;
+}
+
+.dc-rail__dots {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.dc-rail__dot {
+    width: 10px;
+    height: 10px;
+    border-radius: var(--dc-circle);
+    border: 0;
+    padding: 0;
+    background: var(--dc-line);
+    cursor: pointer;
+}
+
+.dc-rail__dot--active {
+    width: 28px;
+    border-radius: var(--dc-pill);
+    background: var(--dc-red);
+}
+
+@media (max-width: 820px) {
+    .dc-rail__slide {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+
+/* -- FAQ -- */
+.dc-faq__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.dc-faq__item {
+    padding: 0;
+}
+
+.dc-faq__item summary {
+    padding: 16px 18px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+}
+
+.dc-faq__item summary::-webkit-details-marker {
+    display: none;
+}
+
+.dc-faq__item summary::marker,
+.dc-job summary::marker {
+    content: "";
+}
+
+.dc-job summary::-webkit-details-marker {
+    display: none;
+}
+
+.dc-faq__item summary .dc-faq__plus {
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 1;
+    flex: none;
+    color: var(--dc-red);
+}
+
+.dc-faq__item[open] summary .dc-faq__plus,
+.dc-job[open] .dc-faq__plus {
+    transform: rotate(45deg);
+}
+
+.dc-faq__answer {
+    padding: 0 18px 16px;
+    color: var(--dc-muted);
+    font-size: 15px;
+    line-height: 1.55;
+}
+
+/* -- Articles -- */
+.dc-article__img {
+    height: 150px;
+    overflow: hidden;
+    background: var(--dc-bg);
+}
+
+.dc-article__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.dc-article__body {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    flex: 1;
+}
+
+.dc-article__body h3 {
+    font-size: 20px;
+    line-height: 1.2;
+}
+
+.dc-article__body h3 a:hover {
+    color: var(--dc-red);
+}
+
+.dc-article__category {
+    color: var(--dc-red);
+    font-weight: 800;
+    font-size: 12px;
+}
+
+/* -- CTA band -- */
+.dc-cta-section {
+    background: var(--dc-white);
+}
+
+/* Breathing room when the CTA follows the brands strip directly
+   (brands carries no bottom padding - it flows into boilers on the homepage). */
+.dc-brands + section .dc-cta {
+    margin-top: 72px;
+}
+
+.dc-cta {
+    margin: 0 0 72px;
+    padding: 48px;
+    background: var(--dc-red);
+    color: var(--dc-white);
+    border-radius: var(--dc-r-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.dc-cta h2 {
+    font-size: 36px;
+}
+
+.dc-cta__actions {
+    display: flex;
+    gap: 12px;
+    flex: none;
+}
+
+/* -- Responsive -- */
+@media (max-width: 1100px) {
+    .dc-hiw__arrow { width: 36px; }
+    .dc-hiw__title { font-size: 21px; }
+}
+
+@media (max-width: 1024px) {
+    .dc-hero__grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 900px) {
+    .dc-cta {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dc-cta__actions {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .dc-cta__actions .dc-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 820px) {
+    .dc-hero,
+    .dc-quotes {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .dc-services,
+    .dc-faq,
+    .dc-articles,
+    .dc-promos,
+    .dc-areas,
+    .dc-hiw {
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+
+    .dc-brands {
+        padding-top: 40px;
+    }
+
+    .dc-boilers {
+        padding-top: 32px;
+        padding-bottom: 40px;
+    }
+
+    .dc-hero h1 {
+        font-size: 36px;
+    }
+
+    .dc-quote,
+    .dc-promo {
+        padding: 20px;
+    }
+
+    .dc-hero__lead {
+        font-size: 17px;
+    }
+
+    .dc-h2,
+    .dc-services h2,
+    .dc-boilers h2,
+    .dc-areas h2,
+    .dc-quotes h2,
+    .dc-faq h2,
+    .dc-articles h2,
+    .dc-hiw h2,
+    .dc-cta h2 {
+        font-size: 28px;
+    }
+
+    .dc-trust {
+        padding-top: 20px;
+        padding-bottom: 20px;
+        font-size: 13px;
+    }
+
+    .dc-trust__grid,
+    .dc-brands__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .dc-promo h3 {
+        font-size: 26px;
+        min-height: 0;
+    }
+
+    .dc-promo__top {
+        flex-direction: column;
+    }
+
+    .dc-promo__img {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .dc-promo__price {
+        font-size: 32px;
+    }
+
+    /* How-it-works vertical timeline */
+    .dc-hiw__sub {
+        margin-bottom: 20px;
+    }
+
+    .dc-hiw__steps {
+        flex-direction: column;
+        gap: 0;
+    }
+
+    .dc-hiw__step {
+        flex-direction: row;
+        gap: 16px;
+        padding: 0 0 28px;
+    }
+
+    .dc-hiw__step:last-child {
+        padding-bottom: 0;
+    }
+
+    .dc-hiw__icon {
+        width: 56px;
+        height: 56px;
+    }
+
+    .dc-hiw__arrow {
+        display: none;
+    }
+
+    .dc-hiw__step:not(:last-child)::before {
+        content: "";
+        position: absolute;
+        left: 27px;
+        top: 64px;
+        bottom: 8px;
+        border-left: 2px dashed var(--dc-sky);
+    }
+
+    .dc-hiw__ghost {
+        font-size: 90px;
+    }
+
+    .dc-hiw__label {
+        font-size: 12px;
+        margin-bottom: 2px;
+    }
+
+    .dc-hiw__title {
+        font-size: 20px;
+        margin-bottom: 4px;
+    }
+
+    .dc-hiw__desc {
+        max-width: none;
+    }
+
+    .dc-faq__grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dc-cta {
+        margin: 0 0 40px;
+        padding: 28px 20px;
+    }
+
+    .dc-brands + section .dc-cta {
+        margin-top: 40px;
+    }
+}
+
+@media (max-width: 640px) {
+    .dc-trust__grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .dc-areas__card {
+        font-size: 14px;
+        padding: 12px;
+    }
+
+    .dc-promo__foot {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+}
+

@@ -1,0 +1,14 @@
+# Only the theme and the deploy workflow belong in this repo.
+*
+!.gitignore
+!.github/
+!.github/workflows/
+!.github/workflows/**
+!mbgroupltd/
+!mbgroupltd/**
+
+# Keep secrets and database dumps out even if they land in the theme folder.
+**/.env
+**/*.sql
+**/wp-config.php
+**/*:Zone.Identifier

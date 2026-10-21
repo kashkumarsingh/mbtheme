@@ -1,0 +1,155 @@
+﻿/* Responsive fixes - container, header, homepage hero */
+
+html {
+    overflow-x: clip;
+}
+
+body {
+    overflow-x: clip;
+}
+
+/* Tailwind .container overrides Bootstrap - restore sane layout */
+.container,
+.container.mx-auto {
+    width: 100%;
+    max-width: 1320px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+@media (min-width: 576px) {
+    .container,
+    .container.mx-auto {
+        padding-left: 1.25rem;
+        padding-right: 1.25rem;
+    }
+}
+
+/* ── Header ── */
+/* NOTE: desktop nav sizing lives with the nav in dc-base.css
+   (.dc-header__list). Only the mobile toggler crossovers remain here. */
+
+/* ── Mobile toggler: hamburger morphs into a close (X) icon when open ── */
+/* Desktop nav needs the full 1440 bar. Below that, use the hamburger. */
+@media (max-width: 1399px) {
+    .header-section .dc-toggler {
+        width: 44px;
+        height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem;
+        border: 0;
+        background: transparent;
+        cursor: pointer;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .header-section .dc-toggler:focus {
+        outline: 2px solid #dc2626;
+        outline-offset: 2px;
+    }
+
+    .header-section .dc-toggler__box {
+        position: relative;
+        display: block;
+        width: 24px;
+        height: 18px;
+    }
+
+    .header-section .dc-toggler__bar {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        border-radius: 2px;
+        background: #111827;
+        transition: transform 0.3s ease, opacity 0.2s ease;
+    }
+
+    .header-section .dc-toggler__bar:nth-child(1) {
+        top: 0;
+    }
+
+    .header-section .dc-toggler__bar:nth-child(2) {
+        top: 8px;
+    }
+
+    .header-section .dc-toggler__bar:nth-child(3) {
+        top: 16px;
+    }
+
+    /* Open state: transform-only morph (no layout properties, stays smooth). */
+    .header-section .dc-toggler[aria-expanded="true"] .dc-toggler__bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .header-section .dc-toggler[aria-expanded="true"] .dc-toggler__bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .header-section .dc-toggler[aria-expanded="true"] .dc-toggler__bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 1399px) and (prefers-reduced-motion: reduce) {
+    .header-section .dc-toggler__bar {
+        transition: none;
+    }
+}
+
+/* NOTE: the mobile menu is an off-canvas drawer (see dc-base.css
+   .dc-drawer); there is no #navbarNav collapse panel any more. */
+
+@media (max-width: 576px) {
+    .header-section .site-logo img,
+    .header-section .dc-header__logo img {
+        max-width: 180px;
+        width: 100%;
+    }
+}
+
+/* ── Nav dropdowns (self-contained - no dependency on the Tailwind CDN) ── */
+.header-section .nav-item.group {
+    position: relative;
+}
+
+.header-section .nav-item.group > .nav-link svg {
+    transition: transform 0.2s ease;
+}
+
+.header-section .nav-item.group.show > .nav-link svg {
+    transform: rotate(180deg);
+}
+
+@media (min-width: 1400px) {
+    .header-section .nav-item.group > .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        z-index: 1000;
+        min-width: 16.5rem;
+        margin-top: 0;
+        padding: 0.4rem;
+        background: #fff;
+        border: 1px solid var(--dc-line, #d5deec);
+        border-radius: 12px;
+        box-shadow: var(--dc-shadow-pop, 0 12px 32px rgba(11, 42, 91, 0.14));
+    }
+
+    .header-section .nav-item.group:hover > .dropdown-menu,
+    .header-section .nav-item.group:focus-within > .dropdown-menu,
+    .header-section .nav-item.group.show > .dropdown-menu {
+        display: block !important;
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .header-section .nav-item.group:hover > .nav-link svg,
+    .header-section .nav-item.group:focus-within > .nav-link svg {
+        transform: rotate(180deg);
+    }
+}

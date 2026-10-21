@@ -1,0 +1,49 @@
+/* MB Group design tokens. Single source of truth for the dc design system:
+   change a value here and every component follows. Loaded first in the
+   dc chain (before dc-base.css). */
+:root {
+    /* Brand */
+    --dc-navy: #0b2a5b;
+    --dc-blue: #1f5fbf;
+    --dc-sky: #8db4f0;
+    --dc-red: #c8102e;
+    --dc-red-dark: #a50d27;
+    --dc-green: #0f7a40;
+    --dc-green-dark: #0b5c31;
+
+    /* Surfaces & lines */
+    --dc-white: #fff;
+    --dc-bg: #eef3fa;
+    --dc-line: #d5deec;
+    --dc-muted: #42536f;
+    --dc-ink: #1d2f4e;
+    --dc-input-border: #9aa9c2;
+    --dc-hover: #f3f4f6;
+    --dc-map__card: #f4f8fd;
+    --dc-map-fill: #dce6f5;
+    --dc-map-line: #9fb3d6;
+
+    /* Type */
+    --dc-font-body: "Nunito Sans", Arial, sans-serif;
+    --dc-font-head: "Patua One", Georgia, serif;
+
+    /* Shape */
+    --dc-r-xs: 6px;
+    --dc-r-sm: 8px;
+    --dc-r-md: 12px;
+    --dc-r-lg: 16px;
+    --dc-pill: 999px;
+    --dc-circle: 50%;
+
+    /* Elevation */
+    --dc-shadow-card: 0 12px 32px rgba(11, 42, 91, 0.12);
+    --dc-shadow-pop: 0 12px 32px rgba(11, 42, 91, 0.14);
+    --dc-shadow-drawer: -12px 0 32px rgba(11, 42, 91, 0.16);
+    --dc-shadow-pin: 0 2px 6px rgba(11, 42, 91, 0.35);
+    --dc-halo: 0 0 0 9px rgba(31, 95, 191, 0.28);
+
+    /* Layout */
+    --dc-container: 1440px;
+    --dc-pad: 64px;
+    --dc-pad-mobile: 16px;
+}

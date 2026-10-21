@@ -1,0 +1,32 @@
+name: Deploy theme
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "mbgroupltd/**"
+      - ".github/workflows/deploy-theme.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-theme
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Copy theme over SSH
+        uses: easingthemes/ssh-deploy@v5
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          REMOTE_PORT: ${{ secrets.SSH_PORT }}
+          SOURCE: "mbgroupltd/"
+          TARGET: ${{ secrets.SSH_PATH }}
+          ARGS: "-rlgoDzvc -i --delete"
+          EXCLUDE: "/node_modules/, /.git/, /.github/"
