@@ -67,6 +67,7 @@ function mbgroupltd_local_business_schema()
             $facts['youtube'] ?? 'https://www.youtube.com/@meraboiler',
             $facts['linkedin'] ?? 'https://uk.linkedin.com/company/meraboiler',
             $facts['trustpilot'] ?? 'https://www.trustpilot.com/review/meraboiler.com',
+            $facts['google_reviews'] ?? 'https://www.google.com/maps/search/?api=1&query=MeraBoiler+Potters+Bar',
         ])),
     ];
 }

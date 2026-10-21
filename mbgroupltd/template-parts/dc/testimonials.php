@@ -1,7 +1,8 @@
 <?php // Homepage testimonials: real customer reviews in a linear rail slider. ?>
 <section class="dc-quotes">
     <div class="dc-container">
-    <h2>What homeowners say after the job</h2>
+    <h2>Meraboiler reviews</h2>
+    <p class="dc-mut">Google rating 4.0 from 271 reviews. <a href="https://www.google.com/maps/search/?api=1&amp;query=MeraBoiler+Potters+Bar">Read the Google reviews</a> or <a href="https://www.trustpilot.com/review/meraboiler.com">the Trustpilot reviews</a>.</p>
     <div class="dc-rail" data-dc-rail data-autoplay="6000">
         <div class="dc-rail__view">
             <div class="dc-rail__track">

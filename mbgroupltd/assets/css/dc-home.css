@@ -51,6 +51,18 @@
     color: var(--dc-muted);
 }
 
+.dc-hero__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    margin: 4px 0 0;
+    font-weight: 700;
+}
+
+.dc-hero__links a {
+    color: var(--dc-blue, #1f5fbf);
+}
+
 .dc-hero__points {
     display: flex;
     flex-direction: column;

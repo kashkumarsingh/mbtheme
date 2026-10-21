@@ -349,8 +349,8 @@ if (!function_exists('mbgroupltd_legacy_seo_redirects')) {
             '/emergency-boiler-repair-north-coventry/' => '/emergency-boiler-repair-coventry/',
             '/emergency-boiler-repair-north-liverpool/' => '/emergency-boiler-repair-liverpool/',
             '/boiler-install-repair-in-north-london/' => '/boiler-repair-north-london/',
-            '/blog/mera-boiler-finance-london-pay-monthly-0-interest/' => '/contact-us/',
-            '/mera-boiler-finance-london-pay-monthly-0-interest/' => '/contact-us/',
+            '/blog/mera-boiler-finance-london-pay-monthly-0-interest/' => '/blog/boiler-finance-london-pay-monthly-0-interest/',
+            '/mera-boiler-finance-london-pay-monthly-0-interest/' => '/blog/boiler-finance-london-pay-monthly-0-interest/',
             '/promotion/' => '/',
             '/boilers/' => '/boiler-installation/',
             '/scottish-power-boiler-service/' => '/boiler-service-london/',
@@ -418,12 +418,13 @@ if (!function_exists('mbgroupltd_gsc_title_overrides')) {
             '/boiler-repair-north-london/' => 'Boiler Repair North London | Same-Day Gas Safe',
             '/boiler-service-north-london/' => 'Boiler Servicing North London | Gas Safe, Fixed Price',
             '/emergency-boiler-repair-north-london/' => 'Emergency Boiler Repair North London | Same Day',
-            '/boiler-installation-potters-bar/' => 'Boiler Installation Potters Bar | Fixed Price',
-            '/boiler-repair-potters-bar/' => 'Boiler Repair Potters Bar | Same-Day Gas Safe',
-            '/boiler-service-potters-bar/' => 'Boiler Servicing Potters Bar | Gas Safe, Fixed Price',
-            '/emergency-boiler-repair-potters-bar/' => 'Emergency Boiler Repair Potters Bar | Same Day',
+            '/boiler-installation-potters-bar/' => 'Boiler Installation Potters Bar | Call 020 8150 2025',
+            '/boiler-repair-potters-bar/' => 'Boiler Repair Potters Bar | Call 020 8150 2025',
+            '/boiler-service-potters-bar/' => 'Boiler Servicing Potters Bar | Call 020 8150 2025',
+            '/emergency-boiler-repair-potters-bar/' => 'Emergency Boiler Repair Potters Bar | 020 8150 2025',
             '/boiler-installation-london/' => 'Boiler Installation London | Gas Safe, Fixed Price',
-            '/blog/boiler-finance-london-pay-monthly-0-interest/' => 'Boiler Finance London | Pay Monthly, 0% Interest',
+            '/' => 'Meraboiler | Boiler Installation, Reviews and 0% Finance',
+            '/blog/boiler-finance-london-pay-monthly-0-interest/' => '0% Boiler Finance | Pay Monthly, Gas Safe',
         ];
     }
 }
@@ -437,12 +438,13 @@ if (!function_exists('mbgroupltd_gsc_description_overrides')) {
             '/boiler-repair-north-london/' => 'Boiler repair across North London and Potters Bar. Same-day Gas Safe callouts and a fixed price before any work starts.',
             '/boiler-service-north-london/' => 'Annual boiler servicing in North London. Gas Safe engineers, fixed price, landlord and homeowner visits.',
             '/emergency-boiler-repair-north-london/' => 'Emergency boiler repair in North London. Same-day Gas Safe engineer, fixed quote, no call-out surprise.',
-            '/boiler-installation-potters-bar/' => 'Fixed-price boiler installation in Potters Bar and EN6. Gas Safe engineers, next-day fitting and 0% finance. Call 020 8150 2025.',
-            '/boiler-repair-potters-bar/' => 'Boiler repair in Potters Bar. Same-day Gas Safe callout and a fixed price before any work starts. Call 020 8150 2025.',
-            '/boiler-service-potters-bar/' => 'Annual boiler servicing in Potters Bar. Gas Safe engineers, fixed price, landlord and homeowner visits.',
-            '/emergency-boiler-repair-potters-bar/' => 'Emergency boiler repair in Potters Bar. Same-day Gas Safe engineer and a fixed quote before we start.',
+            '/boiler-installation-potters-bar/' => 'Boiler installation in Potters Bar. Fixed price, Gas Safe engineers and homeowner reviews. Call 020 8150 2025.',
+            '/boiler-repair-potters-bar/' => 'Boiler repair in Potters Bar. Same-day Gas Safe callout, fixed price, and reviews from local homeowners. Call 020 8150 2025.',
+            '/boiler-service-potters-bar/' => 'Boiler servicing in Potters Bar. Gas Safe, fixed price, and reviews from local homeowners. Call 020 8150 2025.',
+            '/emergency-boiler-repair-potters-bar/' => 'Emergency boiler repair in Potters Bar. Same-day Gas Safe engineer and a fixed quote. Call 020 8150 2025.',
             '/boiler-installation-london/' => 'Fixed-price boiler installation in London. Gas Safe fitting, 0% finance and a written quote before we start.',
-            '/blog/boiler-finance-london-pay-monthly-0-interest/' => 'Pay monthly for a new boiler in London. 0% finance, fixed installation price and Gas Safe engineers.',
+            '/' => 'Meraboiler reviews, fixed-price boiler installation from £1,680 and 0% boiler finance. Gas Safe engineers. Call 020 8150 2025.',
+            '/blog/boiler-finance-london-pay-monthly-0-interest/' => '0% boiler finance on a new boiler from £1,680. Pay monthly, Gas Safe installation, fixed price before we start. Call 020 8150 2025.',
         ];
     }
 }

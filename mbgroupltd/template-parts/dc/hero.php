@@ -13,6 +13,10 @@ $dc_quote_shortcode = '[cqf_quote_form]';
             <div><svg class="dc-tick" viewBox="0 0 24 24" fill="none" stroke="#1F5FBF" stroke-width="3" aria-hidden="true"><path d="M4 12l5 5L20 6"></path></svg> Fixed price, parts and labour included</div>
             <div><svg class="dc-tick" viewBox="0 0 24 24" fill="none" stroke="#1F5FBF" stroke-width="3" aria-hidden="true"><path d="M4 12l5 5L20 6"></path></svg> Up to a 12-year guarantee, depending on the model (5 years on Ariston)</div>
         </div>
+        <p class="dc-hero__links">
+            <a href="<?php echo esc_url(home_url('/fixed-price-boiler-installation/')); ?>">Fixed-price boiler installation</a>
+            <a href="<?php echo esc_url(home_url('/blog/boiler-finance-london-pay-monthly-0-interest/')); ?>">0% boiler finance</a>
+        </p>
         <div class="dc-hero__fine">*Price and model subject to terms and conditions. Guarantee length depends on boiler model and registration, and stays valid only with yearly servicing (servicing not included).</div>
     </div>
     <div class="dc-card dc-quote">
@@ -26,7 +30,7 @@ $dc_quote_shortcode = '[cqf_quote_form]';
 <section class="dc-trust" aria-label="Why choose MeraBoiler">
     <div class="dc-container dc-trust__grid">
     <div>Gas Safe registered engineers</div>
-    <div>Excellent reviews on Trustpilot</div>
+    <div>Google rating 4.0 from 271 reviews</div>
     <div>Fixed price, no hidden extras</div>
     <div>Up to a 12-year guarantee</div>
     </div>

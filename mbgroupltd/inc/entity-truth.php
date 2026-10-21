@@ -32,6 +32,9 @@ function mbgroupltd_entity_facts()
         'tiktok' => 'https://www.tiktok.com/@meraboiler',
         'youtube' => 'https://www.youtube.com/@meraboiler',
         'trustpilot' => 'https://www.trustpilot.com/review/meraboiler.com',
+        'google_reviews' => 'https://www.google.com/maps/search/?api=1&query=MeraBoiler+Potters+Bar',
+        'google_rating' => '4.0',
+        'google_review_count' => '271',
     ];
 }
 
@@ -130,6 +133,7 @@ add_filter('wpseo_schema_organization', static function ($data) {
         $facts['youtube'],
         $facts['linkedin'],
         $facts['trustpilot'],
+        $facts['google_reviews'],
     ];
     return mbgroupltd_sanitize_entity_deep($data);
 }, 99);
