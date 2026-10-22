@@ -17,6 +17,9 @@
                     <a href="https://www.tiktok.com/@meraboiler" target="_blank" rel="noopener" aria-label="MeraBoiler on TikTok">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3v11.2a3.5 3.5 0 11-3.5-3.5"></path><path d="M14 3c.3 2.6 2 4.4 5 4.6"></path></svg>
                     </a>
+                    <a href="https://www.youtube.com/@Meraboiler" target="_blank" rel="noopener" aria-label="MeraBoiler on YouTube">
+                        <svg width="22" height="22" viewBox="0 0 24 24" fill="#fff" stroke="none" aria-hidden="true"><path d="M23 12.2s0-3.2-.4-4.6c-.2-.9-.9-1.6-1.8-1.8C19.2 5.4 12 5.4 12 5.4s-7.2 0-8.8.4c-.9.2-1.6.9-1.8 1.8C1 9 1 12.2 1 12.2s0 3.2.4 4.6c.2.9.9 1.6 1.8 1.8 1.6.4 8.8.4 8.8.4s7.2 0 8.8-.4c.9-.2 1.6-.9 1.8-1.8.4-1.4.4-4.6.4-4.6zM9.8 15.5v-6.6l6.2 3.3-6.2 3.3z"></path></svg>
+                    </a>
                     <a href="https://api.whatsapp.com/send/?phone=447894020000&text=Hi+Meraboiler+I+need+Quote+%2F+Assistance&type=phone_number&app_absent=0" target="_blank" rel="noopener" aria-label="MeraBoiler on WhatsApp">
                         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 00-7.8 13.5L3 21l4.7-1.2A9 9 0 1012 3z"></path><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-2-2-1-1 .8a4 4 0 01-2-2l.8-1-1-2-1.3.7z" fill="#fff" stroke="none"></path></svg>
                     </a>
