@@ -20,7 +20,7 @@ function mbgroupltd_entity_facts()
         'street' => 'Suite 1, Greenleaf House',
         'city' => 'Potters Bar',
         'region' => 'Hertfordshire',
-        'postcode' => 'EN6 1AE',
+        'postcode' => 'EN6 1AD',
         'price_combi' => 1680,
         'price_from' => '£1,680 fully fitted',
         'price_offer' => '£1,890',
