@@ -198,7 +198,7 @@
                         }
                     }
                 } else {
-                    foreach (['Boiler installation' => '/boiler-installation-london/', 'Boiler repair' => '/boiler-repair-london/', 'Boiler servicing' => '/boiler-service-london/', 'All services' => '/service-plan/', 'Areas we cover' => '/service-areas/', 'About us' => '/about-us/', 'Contact' => '/contact-us/'] as $dc_label => $dc_path) {
+                    foreach (['Boiler installation' => '/boiler-installation-london/', 'Boiler repair' => '/boiler-repair-london/', 'Boiler servicing' => '/boiler-service-london/', 'All services' => '/services/', 'Areas we cover' => '/service-areas/', 'About us' => '/about-us/', 'Contact' => '/contact-us/'] as $dc_label => $dc_path) {
                         echo '<li class="dc-drawer__item">';
                         echo '<a class="dc-drawer__link" data-dc-drawer__close href="' . esc_url(home_url($dc_path)) . '">' . esc_html($dc_label) . '</a>';
                         echo '</li>';

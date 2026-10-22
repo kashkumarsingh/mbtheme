@@ -21,8 +21,9 @@ function mbgroupltd_entity_facts()
         'city' => 'Potters Bar',
         'region' => 'Hertfordshire',
         'postcode' => 'EN6 1AD',
-        'price_combi' => 1890,
-        'price_from' => '£1,890 excluding VAT',
+        'price_combi' => 1680,
+        'price_from' => '£1,680 fully fitted',
+        'price_offer' => '£1,890',
         'finance' => 'Boiler finance is not currently advertised. Quotes are fixed-price for like-for-like work; a survey confirms extras.',
         'reviews' => 'Customers review MeraBoiler on Google and Trustpilot. Always check the live listing for the current rating and review count.',
         'hours_office' => 'Office hours 8am–8pm Monday to Friday, 8am–6pm Saturday, 9am–5pm Sunday. Emergency engineer callouts are arranged separately.',
@@ -36,6 +37,20 @@ function mbgroupltd_entity_facts()
         'google_rating' => '4.0',
         'google_review_count' => '271',
     ];
+}
+
+function mbgroupltd_google_review_sentence()
+{
+    $facts = mbgroupltd_entity_facts();
+    return 'Google rating ' . $facts['google_rating'] . ' from ' . $facts['google_review_count'] . ' reviews';
+}
+
+function mbgroupltd_google_review_links_html()
+{
+    $facts = mbgroupltd_entity_facts();
+    return '<p class="dc-mut dc-review-links">' . esc_html(mbgroupltd_google_review_sentence()) . '. '
+        . '<a href="' . esc_url($facts['google_reviews']) . '">Google reviews</a> · '
+        . '<a href="' . esc_url($facts['trustpilot']) . '">Trustpilot reviews</a></p>';
 }
 
 function mbgroupltd_sanitize_entity_text($text)
@@ -121,7 +136,7 @@ add_filter('wpseo_schema_organization', static function ($data) {
     $data['email'] = $facts['email'];
     $data['telephone'] = $facts['phone_tel'];
     $data['legalName'] = $facts['name'];
-    $data['description'] = 'UK Gas Safe boiler installation, repair and servicing from Potters Bar. Fixed-price quotes from ' . $facts['price_from'] . '.';
+    $data['description'] = 'UK Gas Safe boiler installation, repair and servicing from Potters Bar. Fixed-price quotes from ' . $facts['price_from'] . '. Google rating ' . $facts['google_rating'] . ' from ' . $facts['google_review_count'] . ' reviews.';
     $data['address'] = [
         '@type' => 'PostalAddress',
         'streetAddress' => $facts['street'],

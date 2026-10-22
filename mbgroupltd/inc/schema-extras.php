@@ -60,6 +60,12 @@ function mbgroupltd_local_business_schema()
                 'closes' => '17:00',
             ],
         ],
+        'aggregateRating' => [
+            '@type' => 'AggregateRating',
+            'ratingValue' => $facts['google_rating'] ?? '4.0',
+            'reviewCount' => $facts['google_review_count'] ?? '271',
+            'bestRating' => '5',
+        ],
         'sameAs' => array_values(array_filter([
             $facts['facebook'] ?? 'https://www.facebook.com/officialMeraBoiler/',
             $facts['instagram'] ?? 'https://www.instagram.com/meraboiler/',

@@ -89,8 +89,8 @@ if (!function_exists('mbgroupltd_render_boiler_installation_location_page')) {
 
             <section style="background:#fff;">
                 <div class="dc-container" style="padding-top:72px;padding-bottom:72px;">
-                    <h2 class="dc-h2" style="margin-bottom:8px;">What <?php echo esc_html($location_label); ?> homeowners say</h2>
-                    <p class="dc-sub muted" style="margin-bottom:32px;">&nbsp;</p>
+                    <h2 class="dc-h2" style="margin-bottom:12px;">What <?php echo esc_html($location_label); ?> homeowners say</h2>
+                    <?php echo mbgroupltd_google_review_links_html(); ?>
                     <div class="dc-cards-3">
                         <div class="dc-card dc-review">
                             <div class="dc-stars" role="img" aria-label="Rated 5 out of 5 stars"></div>

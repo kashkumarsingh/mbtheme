@@ -2,7 +2,7 @@
 <section class="dc-quotes">
     <div class="dc-container">
     <h2>Meraboiler reviews</h2>
-    <p class="dc-mut dc-review-links">Google rating 4.0 from 271 reviews. <a href="https://www.google.com/maps/search/?api=1&amp;query=MeraBoiler+Potters+Bar">Google reviews</a> · <a href="https://www.trustpilot.com/review/meraboiler.com">Trustpilot reviews</a></p>
+    <?php echo mbgroupltd_google_review_links_html(); ?>
     <div class="dc-rail" data-dc-rail data-autoplay="6000">
         <div class="dc-rail__view">
             <div class="dc-rail__track">

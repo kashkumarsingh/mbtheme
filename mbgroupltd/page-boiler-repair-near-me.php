@@ -97,7 +97,8 @@ $dc_quote = esc_url(home_url('/quote/'));
 
         <section style="background:#fff;">
             <div class="dc-container" style="padding-top:72px;padding-bottom:72px;">
-                <h2 class="dc-h2" style="margin-bottom:32px;">What homeowners say</h2>
+                <h2 class="dc-h2" style="margin-bottom:12px;">What homeowners say</h2>
+                <?php echo mbgroupltd_google_review_links_html(); ?>
                 <div class="dc-cards-3">
                     <div class="dc-card dc-review">
                         <div class="dc-stars" role="img" aria-label="Rated 5 out of 5 stars"></div>

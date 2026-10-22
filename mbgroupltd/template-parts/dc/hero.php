@@ -30,7 +30,7 @@ $dc_quote_shortcode = '[cqf_quote_form]';
 <section class="dc-trust" aria-label="Why choose MeraBoiler">
     <div class="dc-container dc-trust__grid">
     <div>Gas Safe registered engineers</div>
-    <div>Google rating 4.0 from 271 reviews</div>
+    <div><?php echo esc_html(mbgroupltd_google_review_sentence()); ?></div>
     <div>Fixed price, no hidden extras</div>
     <div>Up to a 12-year guarantee</div>
     </div>
