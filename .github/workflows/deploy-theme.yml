@@ -1,10 +1,13 @@
-name: Deploy theme
+name: Deploy theme and plugins
 
 on:
   push:
     branches: [main]
     paths:
       - "mbgroupltd/**"
+      - "plugins/custom-quote-form/**"
+      - "plugins/custom-quote-form-shared/**"
+      - "plugins/custom-quote-form-wizard/**"
       - ".github/workflows/deploy-theme.yml"
   workflow_dispatch:
 
@@ -30,3 +33,39 @@ jobs:
           TARGET: ${{ secrets.SSH_PATH }}
           ARGS: "-rlgoDzvc -i --delete"
           EXCLUDE: "/node_modules/, /.git/, /.github/"
+
+      - name: Copy custom-quote-form
+        uses: easingthemes/ssh-deploy@v5.1.0
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          REMOTE_PORT: ${{ secrets.SSH_PORT }}
+          SOURCE: "plugins/custom-quote-form/"
+          TARGET: "/home/meraboiler/public_html/wp-content/plugins/custom-quote-form/"
+          ARGS: "-rlgoDzvc -i --delete"
+          EXCLUDE: "/node_modules/, /.git/"
+
+      - name: Copy custom-quote-form-shared
+        uses: easingthemes/ssh-deploy@v5.1.0
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          REMOTE_PORT: ${{ secrets.SSH_PORT }}
+          SOURCE: "plugins/custom-quote-form-shared/"
+          TARGET: "/home/meraboiler/public_html/wp-content/plugins/custom-quote-form-shared/"
+          ARGS: "-rlgoDzvc -i --delete"
+          EXCLUDE: "/node_modules/, /.git/"
+
+      - name: Copy custom-quote-form-wizard
+        uses: easingthemes/ssh-deploy@v5.1.0
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USER }}
+          REMOTE_PORT: ${{ secrets.SSH_PORT }}
+          SOURCE: "plugins/custom-quote-form-wizard/"
+          TARGET: "/home/meraboiler/public_html/wp-content/plugins/custom-quote-form-wizard/"
+          ARGS: "-rlgoDzvc -i --delete"
+          EXCLUDE: "/node_modules/, /.git/"

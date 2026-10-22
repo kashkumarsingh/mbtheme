@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134 134">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #073e5f;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="Group_53" data-name="Group 53">
+      <g id="Rectangle_38" data-name="Rectangle 38">
+        <g>
+          <rect class="cls-2" width="134" height="134" rx="15" ry="15"/>
+          <rect class="cls-1" x="1.68" y="1.68" width="130.63" height="130.63" rx="13.86" ry="13.86"/>
+        </g>
+      </g>
+    </g>
+    <rect class="cls-2" x="58.51" y="66.75" width="6.8" height="6.8"/>
+    <rect class="cls-2" x="70.07" y="66.75" width="6.8" height="6.8"/>
+    <rect class="cls-2" x="58.51" y="78.48" width="6.8" height="6.8"/>
+    <rect class="cls-2" x="70.07" y="78.48" width="6.8" height="6.8"/>
+    <rect class="cls-2" x="29.32" y="30.51" width="14.53" height="1.17"/>
+    <rect class="cls-2" x="31.66" y="31.68" width="9.84" height="17.11"/>
+    <rect class="cls-1" x="32.89" y="33.11" width="2.23" height="6.42"/>
+    <rect class="cls-1" x="38.05" y="33.11" width="2.23" height="6.42"/>
+    <rect class="cls-1" x="33.53" y="40.74" width="6.29" height="6.29"/>
+    <polygon class="cls-2" points="42.91 64.15 30.69 77.96 30.26 48.24 42.91 48.24 42.91 64.15"/>
+    <path class="cls-2" d="m16.21,92.82c17.68-19.89,35.2-40.3,53.39-59.68,18.36,19.21,35.88,39.79,53.56,59.68h-11.39l-22.44-25.34-19.72-22.27-19.72,22.27-22.44,25.34h-11.39.17Z"/>
+  </g>
+</svg>

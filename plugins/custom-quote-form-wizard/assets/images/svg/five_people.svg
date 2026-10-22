@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134 134">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #073e5f;
+      }
+
+      .cls-3 {
+        font-family: PatuaOne-Regular, 'Patua One';
+        font-size: 12px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g id="Group_53" data-name="Group 53">
+        <g id="Rectangle_38" data-name="Rectangle 38">
+          <g>
+            <rect class="cls-2" width="134" height="134" rx="15" ry="15"/>
+            <rect class="cls-1" x="1.68" y="1.68" width="130.63" height="130.63" rx="13.86" ry="13.86"/>
+          </g>
+        </g>
+      </g>
+      <path class="cls-2" d="m76.8,66.67c5.07-3.24,8.44-8.92,8.44-15.37,0-10.06-8.18-18.24-18.24-18.24s-18.24,8.18-18.24,18.24c0,6.45,3.37,12.13,8.44,15.37-16.02,3.47-27.81,15.22-27.81,29.19,0,1.73.19,3.42.54,5.07h74.14c.35-1.65.54-3.34.54-5.07,0-13.97-11.79-25.72-27.81-29.19Z"/>
+      <g>
+        <circle class="cls-1" cx="69.11" cy="83.03" r="9.21"/>
+        <text class="cls-3" transform="translate(66.05 87.16)"><tspan x="0" y="0">5</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134 134">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #073e5f;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g>
+      <g id="Group_53" data-name="Group 53">
+        <g id="Rectangle_38" data-name="Rectangle 38">
+          <g>
+            <rect class="cls-2" width="134" height="134" rx="15" ry="15"/>
+            <rect class="cls-1" x="1.68" y="1.68" width="130.63" height="130.63" rx="13.86" ry="13.86"/>
+          </g>
+        </g>
+      </g>
+      <path class="cls-2" d="m66.47,17.19s62.87,57.06,2.66,99.62c0,0,18.13-25.85,4.57-51.54,0,0-8.67,15.76-12.45,19.23,0,0-10.09,9.93-8.35,26.8,0,0-27.06-16.87-6.25-52.38,0,0,24.73-30.26,19.83-41.72Z"/>
+    </g>
+  </g>
+</svg>

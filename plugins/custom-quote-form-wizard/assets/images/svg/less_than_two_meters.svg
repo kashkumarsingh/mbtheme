@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134 134">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #073e5f;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="Group_53" data-name="Group 53">
+      <g id="Rectangle_38" data-name="Rectangle 38">
+        <g>
+          <rect class="cls-2" width="134" height="134" rx="15" ry="15"/>
+          <rect class="cls-1" x="1.68" y="1.68" width="130.63" height="130.63" rx="13.86" ry="13.86"/>
+        </g>
+      </g>
+    </g>
+    <polygon class="cls-2" points="15.18 39.66 15.18 86.43 24.12 86.43 24.12 56.85 41.79 56.85 41.79 86.43 50.72 86.43 50.72 39.66 15.18 39.66"/>
+    <polygon class="cls-2" points="80.56 41.12 80.56 87.61 89.44 87.61 89.44 58.21 107 58.21 107 87.61 115.89 87.61 115.89 41.12 80.56 41.12"/>
+    <g>
+      <rect class="cls-2" x="61" y="59.06" width="9.35" height="7.2" transform="translate(131.34 125.31) rotate(180)"/>
+      <rect class="cls-2" x="56.02" y="58.25" width="4.91" height="8.81" transform="translate(116.95 125.31) rotate(180)"/>
+      <polygon class="cls-2" points="56.02 57.79 52.12 54.97 52.12 70.84 56.02 67.95 56.02 57.79"/>
+      <polygon class="cls-1" points="69.94 65.72 69.94 60.94 65.17 65.72 69.94 65.72"/>
+    </g>
+    <g>
+      <g>
+        <path class="cls-2" d="m71.24,56.32c.36,0,.65.22.65.49v3.14c0,.27-.29.49-.65.49s-.65-.22-.65-.49v-3.14c0-.27.29-.49.65-.49Z"/>
+        <path class="cls-2" d="m91.9,56.32c.36,0,.65.22.65.49v3.14c0,.27-.29.49-.65.49s-.65-.22-.65-.49v-3.14c0-.27.29-.49.65-.49Z"/>
+        <path class="cls-2" d="m71.24,57.89h20.66c.36,0,.65.22.65.49,0,.27-.29.49-.65.49h-20.66c-.36,0-.65-.22-.65-.49s.29-.49.65-.49Z"/>
+      </g>
+      <path class="cls-2" d="m91.9,61.03c.36,0,.65.22.65.49v1.02c0,.27-.29.49-.65.49s-.65-.22-.65-.49v-1.05c.02-.26.3-.47.65-.47Z"/>
+      <path class="cls-2" d="m71.24,61.03c.36,0,.65.22.65.49v1.02c0,.27-.29.49-.65.49s-.65-.22-.65-.49v-1.05c.02-.26.3-.47.65-.47Z"/>
+    </g>
+  </g>
+</svg>

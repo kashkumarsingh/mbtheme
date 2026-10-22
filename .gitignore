@@ -1,4 +1,4 @@
-# Only the theme and the deploy workflow belong in this repo.
+# Theme, three custom plugins, and the deploy workflow.
 *
 !.gitignore
 !.github/
@@ -6,9 +6,18 @@
 !.github/workflows/**
 !mbgroupltd/
 !mbgroupltd/**
+!plugins/
+plugins/*
+!plugins/custom-quote-form/
+!plugins/custom-quote-form/**
+!plugins/custom-quote-form-shared/
+!plugins/custom-quote-form-shared/**
+!plugins/custom-quote-form-wizard/
+!plugins/custom-quote-form-wizard/**
 
 # Keep secrets and database dumps out even if they land in the theme folder.
 **/.env
 **/*.sql
 **/wp-config.php
 **/*:Zone.Identifier
+**/*.backup

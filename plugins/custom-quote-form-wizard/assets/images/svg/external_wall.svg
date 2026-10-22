@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134 134">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #073e5f;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="Group_53" data-name="Group 53">
+      <g id="Rectangle_38" data-name="Rectangle 38">
+        <g>
+          <rect class="cls-2" width="134" height="134" rx="15" ry="15"/>
+          <rect class="cls-1" x="1.68" y="1.68" width="130.63" height="130.63" rx="13.86" ry="13.86"/>
+        </g>
+      </g>
+    </g>
+    <polygon class="cls-2" points="25.24 31.34 25.24 101.69 38.68 101.69 38.68 57.2 65.27 57.2 65.27 101.69 78.71 101.69 78.71 31.34 25.24 31.34"/>
+    <g>
+      <rect class="cls-2" x="98.09" y="57.84" width="18.7" height="14.39" transform="translate(214.87 130.08) rotate(180)"/>
+      <rect class="cls-2" x="88.13" y="56.23" width="9.82" height="17.62" transform="translate(186.08 130.08) rotate(180)"/>
+      <polygon class="cls-2" points="88.13 55.31 80.33 49.66 80.33 81.41 88.13 75.62 88.13 55.31"/>
+      <polygon class="cls-1" points="115.98 71.16 115.98 61.61 106.43 71.16 115.98 71.16"/>
+    </g>
+  </g>
+</svg>

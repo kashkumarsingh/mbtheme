@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_2" data-name="Layer 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 134 134">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2, .cls-3 {
+        fill: #073e5f;
+      }
+
+      .cls-3 {
+        font-family: PatuaOne-Regular, 'Patua One';
+        font-size: 12px;
+      }
+    </style>
+  </defs>
+  <g id="Layer_1-2" data-name="Layer 1">
+    <g id="Group_53" data-name="Group 53">
+      <g id="Rectangle_38" data-name="Rectangle 38">
+        <g>
+          <rect class="cls-2" width="134" height="134" rx="15" ry="15"/>
+          <rect class="cls-1" x="1.68" y="1.68" width="130.63" height="130.63" rx="13.86" ry="13.86"/>
+        </g>
+      </g>
+    </g>
+    <g>
+      <g id="bed">
+        <g>
+          <path class="cls-2" d="m111.19,92.54v-15.7c0-8.56-6.94-15.5-15.51-15.5h-57.37c-8.56,0-15.5,6.94-15.5,15.5v15.7h88.38Z"/>
+          <g>
+            <rect class="cls-2" x="36.76" y="93.81" width="20.17" height="5.36"/>
+            <rect class="cls-2" x="77.07" y="93.81" width="20.17" height="5.36"/>
+          </g>
+          <path class="cls-2" d="m95.68,34.83h-57.37c-8.56,0-15.5,6.94-15.5,15.5v18.09h.05c.49-5.36,6.17-9.7,13.45-10.38v-4.11c0-2.52,2.05-4.57,4.57-4.57h19.6c2.52,0,4.57,2.05,4.57,4.57v4.01h3.89v-4.01c0-2.52,2.05-4.57,4.57-4.57h19.6c2.52,0,4.57,2.05,4.57,4.57v4.11c7.28.68,12.97,5.01,13.46,10.38h.05v-18.09c0-8.56-6.94-15.5-15.5-15.5Z"/>
+        </g>
+      </g>
+      <g>
+        <circle class="cls-1" cx="68.35" cy="76.93" r="9.21"/>
+        <text class="cls-3" transform="translate(64.93 81.07)"><tspan x="0" y="0">3</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
