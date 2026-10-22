@@ -356,6 +356,20 @@
  #step-18 .form-group {
      margin-bottom: 0;
 }
+/* Empty prompts stay grey. Values brought in from the first form, and chosen answers, read as filled. */
+#getquote #step-18 input.form-control::placeholder,
+#getquote #step-18 select.form-control:invalid {
+    color: #9ca3af;
+    font-weight: 400;
+    background-color: #fff;
+}
+#getquote #step-18 input.form-control:not(:placeholder-shown),
+#getquote #step-18 select.form-control:valid {
+    color: #0b1f3a;
+    font-weight: 600;
+    background-color: #e8f2ff;
+    border-color: #93c5fd;
+}
 /* Define a custom animation */
  @keyframes slideInFromRight {
      from {
