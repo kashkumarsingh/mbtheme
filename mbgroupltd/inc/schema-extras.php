@@ -28,7 +28,7 @@ function mbgroupltd_local_business_schema()
             'streetAddress' => $facts['street'] ?? 'Suite 1, Greenleaf House',
             'addressLocality' => $facts['city'] ?? 'Potters Bar',
             'addressRegion' => $facts['region'] ?? 'Hertfordshire',
-            'postalCode' => $facts['postcode'] ?? 'EN6 1AD',
+            'postalCode' => $facts['postcode'] ?? 'EN6 1AE',
             'addressCountry' => 'GB',
         ],
         'geo' => [
