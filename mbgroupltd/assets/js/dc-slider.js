@@ -1,5 +1,5 @@
 /* MeraBoiler promo offers slider (vanilla JS, no dependencies).
-   Autoplay + swipe only - no arrows or dots.
+   Autoplay, swipe, and page dots.
    Visible cards: 2 side-by-side on desktop (>820px), 1 on smaller screens
    (must match the .dc-slider__slide flex-basis breakpoints in dc-home.css). */
 (function () {
@@ -36,10 +36,36 @@
       return w + gap;
     }
 
+    var dotsWrap = slider.querySelector('[data-dc-slider-dots]');
+
+    function paintDots(pages) {
+      if (!dotsWrap) return;
+      if (dotsWrap.children.length !== pages) {
+        dotsWrap.innerHTML = '';
+        for (var d = 0; d < pages; d++) {
+          var b = document.createElement('button');
+          b.type = 'button';
+          b.className = 'dc-slider__dot';
+          b.setAttribute('aria-label', 'Show offer ' + (d + 1));
+          (function (n) {
+            b.addEventListener('click', function () { go(n); restart(); });
+          })(d);
+          dotsWrap.appendChild(b);
+        }
+      }
+      var kids = dotsWrap.children;
+      for (var k = 0; k < kids.length; k++) {
+        kids[k].classList.toggle('dc-slider__dot--active', k === index);
+        kids[k].setAttribute('aria-current', k === index ? 'true' : 'false');
+      }
+      dotsWrap.hidden = pages < 2;
+    }
+
     function go(i) {
       var max = maxIndex();
       index = ((i % (max + 1)) + (max + 1)) % (max + 1);
       track.style.transform = 'translateX(-' + index * step() + 'px)';
+      paintDots(max + 1);
     }
 
     function stop() {

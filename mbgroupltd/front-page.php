@@ -18,6 +18,7 @@ get_header();
         get_template_part('template-parts/dc/testimonials');
         get_template_part('template-parts/dc/faqs');
         get_template_part('template-parts/dc/articles');
+        get_template_part('template-parts/dc/fault-band');
         get_template_part('template-parts/dc/cta');
         ?>
     </main><!-- .site-main -->
