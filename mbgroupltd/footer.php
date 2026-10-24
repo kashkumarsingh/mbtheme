@@ -90,6 +90,11 @@
         </div>
     </div>
 </footer>
+<div class="dc-callbar" role="region" aria-label="Call or send a video">
+    <span class="dc-callbar__live"><span class="dc-callbar__dot" aria-hidden="true"></span>Engineers on call today</span>
+    <a class="dc-callbar__call" href="tel:02081502025">Tap to call</a>
+    <a class="dc-callbar__video" href="https://api.whatsapp.com/send/?phone=447894020000&amp;text=Hi+Meraboiler%2C+I+will+send+a+10-second+video+of+my+boiler.+Please+quote+before+a+visit.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Send video</a>
+</div>
 <?php wp_footer(); ?>
 
 </body>

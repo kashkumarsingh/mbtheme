@@ -9,6 +9,7 @@ get_header();
     <main id="main" class="site-main" role="main">
         <?php
         get_template_part('template-parts/dc/hero');
+        get_template_part('template-parts/dc/rapid-response');
         get_template_part('template-parts/dc/promos');
         get_template_part('template-parts/dc/hiw');
         get_template_part('template-parts/dc/services');
