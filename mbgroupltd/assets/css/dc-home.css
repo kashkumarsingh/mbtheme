@@ -270,6 +270,7 @@
 @media (min-width: 821px) {
     .dc-fault-band {
         display: block;
+        margin-top: -48px;
         padding: 0 0 72px;
         background: var(--dc-white);
     }
