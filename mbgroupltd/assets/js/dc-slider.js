@@ -1,16 +1,22 @@
 /* MeraBoiler promo offers slider (vanilla JS, no dependencies).
    Autoplay + swipe only - no arrows or dots.
-   Visible cards: 2 side-by-side on desktop (>820px), 1 on smaller screens
+   Visible cards: 3 side-by-side on desktop (>820px), 1 on smaller screens
    (must match the .dc-slider__slide flex-basis breakpoints in dc-home.css). */
 (function () {
   var REDUCED = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var DESKTOP_Q = '(min-width: 821px)';
-  var DESKTOP_PER_VIEW = 2;
+  var DESKTOP_PER_VIEW = 3;
   var MOBILE_PER_VIEW = 1;
 
   function init(slider) {
     var track = slider.querySelector('.dc-slider__track');
     var slides = slider.querySelectorAll('.dc-slider__slide');
+
+    function shown() {
+      return Array.prototype.filter.call(slides, function (slide) {
+        return window.getComputedStyle(slide).display !== 'none';
+      });
+    }
     if (!track || slides.length < 2) {
       slider.setAttribute('data-dc-slider', 'ready');
       return;
@@ -26,12 +32,13 @@
     }
 
     function maxIndex() {
-      return Math.max(0, slides.length - perView());
+      return Math.max(0, shown().length - perView());
     }
 
     // Pixel step (slide width + track gap) so any gap/basis stays exact.
     function step() {
-      var w = slides[0].getBoundingClientRect().width;
+      var visible = shown();
+      var w = (visible[0] || slides[0]).getBoundingClientRect().width;
       var gap = parseFloat(getComputedStyle(track).columnGap) || 0;
       return w + gap;
     }

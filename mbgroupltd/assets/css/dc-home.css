@@ -210,7 +210,7 @@
     will-change: transform;
 }
 
-/* 1 card on small screens, 2 side-by-side on desktop (see JS perView). */
+/* 1 card on small screens, 3 side-by-side on desktop (see JS perView). */
 .dc-slider__slide {
     flex: 0 0 100%;
     width: 100%;
@@ -229,10 +229,43 @@
 
 @media (min-width: 821px) {
     .dc-slider__slide {
-        flex-basis: calc((100% - 24px) / 2);
-        width: calc((100% - 24px) / 2);
-        max-width: calc((100% - 24px) / 2);
+        flex-basis: calc((100% - 48px) / 3);
+        width: calc((100% - 48px) / 3);
+        max-width: calc((100% - 48px) / 3);
     }
+}
+
+@media (max-width: 820px) {
+    .dc-slider__slide--desk {
+        display: none;
+    }
+}
+
+.dc-promo--fault h3 {
+    min-height: 0;
+}
+
+.dc-fault {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.dc-fault select,
+.dc-fault input {
+    width: 100%;
+    box-sizing: border-box;
+    min-height: 48px;
+    border: 1px solid var(--dc-input-border);
+    border-radius: var(--dc-r-sm);
+    padding: 10px 12px;
+    font: inherit;
+    background: var(--dc-white);
+}
+
+.dc-promo--fault .dc-btn {
+    width: 100%;
+    justify-content: center;
 }
 
 @media (prefers-reduced-motion: reduce) {
