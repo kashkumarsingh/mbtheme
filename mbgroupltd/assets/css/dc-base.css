@@ -1168,19 +1168,8 @@ body.dc-lock {
     margin-top: 12px;
 }
 
-body {
-    padding-bottom: 56px;
-}
-
-.joinchat,
-.joinchat__button,
-.wa__btn,
-.wa__btn_popup {
-    bottom: 72px !important;
-}
-
 .dc-callbar {
-    display: flex;
+    display: none;
     font-family: var(--dc-font-body);
     flex-direction: row;
     align-items: stretch;
@@ -1277,6 +1266,7 @@ body {
     }
 
     .dc-callbar {
+        display: flex;
         flex-direction: column;
         min-height: 0;
     }
