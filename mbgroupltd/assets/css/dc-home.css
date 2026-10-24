@@ -243,6 +243,10 @@
     margin-top: 16px;
 }
 
+.dc-slider__dots[hidden] {
+    display: none;
+}
+
 .dc-slider__dot {
     width: 10px;
     height: 10px;
