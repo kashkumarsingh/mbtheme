@@ -1021,23 +1021,39 @@ body.dc-lock {
 /* Rapid response: fault code, video triage, sticky call bar */
 .dc-rapid {
     background: var(--dc-bg);
-    padding: 48px 0;
+    padding: 64px 0;
+}
+
+.dc-rapid h2 {
+    font-size: 38px;
+    line-height: 1.15;
+    margin: 8px 0 12px;
 }
 
 .dc-rapid__lead {
     max-width: 42rem;
     color: var(--dc-muted);
-    margin: 8px 0 24px;
+    margin: 0 0 28px;
+    line-height: 1.5;
 }
 
 .dc-rapid__grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.dc-rapid__card {
+    padding: 28px;
+    box-shadow: var(--dc-shadow-card);
+    display: flex;
+    flex-direction: column;
 }
 
 .dc-rapid__card h3 {
-    font-size: 1.35rem;
+    font-size: 26px;
+    line-height: 1.2;
     margin-bottom: 12px;
 }
 
@@ -1066,8 +1082,9 @@ body.dc-lock {
 }
 
 .dc-rapid__card .dc-btn {
-    margin-top: 16px;
     display: inline-flex;
+    margin-top: auto;
+    align-self: flex-start;
 }
 
 .dc-rapid__fine {
@@ -1080,6 +1097,14 @@ body.dc-lock {
 }
 
 @media (max-width: 820px) {
+    .dc-rapid {
+        padding: 40px 0;
+    }
+
+    .dc-rapid h2 {
+        font-size: 30px;
+    }
+
     .dc-rapid__grid {
         grid-template-columns: 1fr;
     }
