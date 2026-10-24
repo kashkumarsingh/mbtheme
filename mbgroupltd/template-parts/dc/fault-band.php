@@ -11,7 +11,8 @@
                 <div class="dc-eyebrow">BOILER FAULT</div>
                 <p>Send the display code, or a short video, before we leave the yard.</p>
             </div>
-            <form class="dc-fault" id="dc-fault-form-desk" action="https://api.whatsapp.com/send/" method="get" target="_blank">
+            <form class="dc-fault dc-fault-band__choice" id="dc-fault-form-desk" action="https://api.whatsapp.com/send/" method="get" target="_blank">
+                <span class="dc-fault-band__label">Have the code</span>
                 <input type="hidden" name="phone" value="447894020000">
                 <input type="hidden" name="type" value="phone_number">
                 <input type="hidden" name="text" id="dc-fault-text-desk" value="">
@@ -32,7 +33,11 @@
                 <input id="dc-fault-code-desk" type="text" inputmode="text" maxlength="12" placeholder="Code, e.g. F22" required autocomplete="off">
                 <button class="dc-btn" type="submit">Send the code</button>
             </form>
-            <a class="dc-btn dc-btn--wa" href="https://api.whatsapp.com/send/?phone=447894020000&amp;text=Hi+Meraboiler%2C+I+will+send+a+10-second+video+of+my+boiler.+Please+quote+before+a+visit.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Send a video</a>
+            <span class="dc-fault-band__or" aria-hidden="true">or</span>
+            <div class="dc-fault-band__choice dc-fault-band__choice--video">
+                <span class="dc-fault-band__label">No code handy</span>
+                <a class="dc-btn dc-btn--wa" href="https://api.whatsapp.com/send/?phone=447894020000&amp;text=Hi+Meraboiler%2C+I+will+send+a+10-second+video+of+my+boiler.+Please+quote+before+a+visit.&amp;type=phone_number&amp;app_absent=0" target="_blank" rel="noopener">Send a video</a>
+            </div>
         </div>
     </div>
 </section>

@@ -286,11 +286,38 @@
 
     .dc-fault-band__row p {
         margin: 4px 0 0;
-        font-weight: 700;
+        font-family: var(--dc-font-head);
+        font-weight: 400;
+        font-size: 26px;
+        line-height: 1.2;
     }
 
     .dc-fault-band__copy {
         flex: 1 1 220px;
+    }
+
+    .dc-fault-band__choice {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 12px;
+        background: var(--dc-white);
+        border: 1px solid var(--dc-line);
+        border-radius: var(--dc-r-md);
+    }
+
+    .dc-fault-band__label {
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--dc-muted);
+        white-space: nowrap;
+    }
+
+    .dc-fault-band__or {
+        font-weight: 800;
+        color: var(--dc-muted);
     }
 
     .dc-fault {
