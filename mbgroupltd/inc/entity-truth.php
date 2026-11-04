@@ -215,14 +215,27 @@ add_action('template_redirect', static function () {
     exit;
 }, 0);
 
+add_filter('option_wpseo', static function ($options) {
+    if (!is_array($options)) {
+        return $options;
+    }
+    // Yoast free/premium add "Disallow: /" groups for these crawlers from their
+    // deny_*_crawling options. Yoast appends its robots.txt block AFTER the
+    // theme (same 99_999 priority, later registration), so the theme cannot
+    // strip it. Turn the options off at read time instead.
+    foreach (['deny_ccbot_crawling', 'deny_google_extended_crawling', 'deny_gptbot_crawling', 'deny_adsbot_crawling'] as $key) {
+        $options[$key] = false;
+    }
+    return $options;
+}, 20);
+
 add_filter('robots_txt', static function ($output, $public) {
     if (!$public) {
         return $output;
     }
-    // Yoast's file editor can emit "Disallow: /" for these agents. That group
-    // wins over an earlier Allow and blocks AdsBot (Ads landing-page checks)
-    // plus the crawlers the /llms.txt brief is written for. Strip those groups
-    // last, then state Allow explicitly.
+    // Belt and braces: a stored Yoast file-editor block can still emit
+    // "Disallow: /" for these agents. Strip it as late as possible, then
+    // state Allow explicitly.
     $agents = [
         'AdsBot',
         'AdsBot-Google',
@@ -251,4 +264,4 @@ add_filter('robots_txt', static function ($output, $public) {
         $output .= 'Sitemap: ' . home_url('/sitemap_index.xml') . "\n";
     }
     return $output;
-}, 99999, 2);
+}, PHP_INT_MAX, 2);
