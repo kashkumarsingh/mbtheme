@@ -219,15 +219,36 @@ add_filter('robots_txt', static function ($output, $public) {
     if (!$public) {
         return $output;
     }
+    // Yoast's file editor can emit "Disallow: /" for these agents. That group
+    // wins over an earlier Allow and blocks AdsBot (Ads landing-page checks)
+    // plus the crawlers the /llms.txt brief is written for. Strip those groups
+    // last, then state Allow explicitly.
+    $agents = [
+        'AdsBot',
+        'AdsBot-Google',
+        'AdsBot-Google-Mobile',
+        'GPTBot',
+        'ChatGPT-User',
+        'CCBot',
+        'Google-Extended',
+        'ClaudeBot',
+        'PerplexityBot',
+    ];
+    foreach ($agents as $agent) {
+        $output = preg_replace(
+            '/User-agent:\s*' . preg_quote($agent, '/') . '\s*(?:\r?\n)+(?:Allow:\s*\S+\s*|Disallow:\s*\S*\s*)+/i',
+            '',
+            $output
+        );
+    }
+    $output = rtrim($output) . "\n";
+    $output .= "\n# Theme: allow ads quality checks and the LLM brief crawlers\n";
+    foreach ($agents as $agent) {
+        $output .= "User-agent: {$agent}\nAllow: /\n\n";
+    }
     if (stripos($output, 'llms.txt') === false) {
-        $output .= "\n# Curated LLM brief (theme overrides Yoast auto file)\n";
+        $output .= "# Curated LLM brief\n";
         $output .= 'Sitemap: ' . home_url('/sitemap_index.xml') . "\n";
     }
-    $output = preg_replace('/User-agent: GPTBot\s+Disallow: \/\*\?m=me-/i', "User-agent: GPTBot\nAllow: /", $output);
-    $output = preg_replace('/User-agent: Google-Extended\s+Disallow: \/\*\?m=me-/i', "User-agent: Google-Extended\nAllow: /", $output);
-    $extra = "\nUser-agent: GPTBot\nAllow: /\n\nUser-agent: ChatGPT-User\nAllow: /\n\nUser-agent: ClaudeBot\nAllow: /\n\nUser-agent: PerplexityBot\nAllow: /\n";
-    if (stripos($output, 'ChatGPT-User') === false) {
-        $output .= $extra;
-    }
     return $output;
-}, 20, 2);
+}, 99999, 2);

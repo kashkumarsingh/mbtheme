@@ -255,10 +255,7 @@ if (!function_exists('mbgroupltd_print_service_schema')) {
             'name' => $service_name,
             'serviceType' => $service_label,
             'provider' => [
-                '@type' => 'Organization',
-                'name' => get_bloginfo('name'),
-                'url' => home_url('/'),
-                'telephone' => '+442081502025',
+                '@id' => home_url('/#localbusiness'),
             ],
             'areaServed' => $is_uk ? 'United Kingdom' : $location_label,
             'url' => $page_url,
@@ -412,12 +409,20 @@ if (!function_exists('mbgroupltd_gsc_title_overrides')) {
      */
     function mbgroupltd_gsc_title_overrides()
     {
-        return [
+        $titles = [];
+        $patterns = [
+            'boiler-installation-%s' => 'Boiler Installation %s | Fixed Price',
+            'boiler-repair-%s' => 'Boiler Repair %s | Same-Day Gas Safe',
+            'boiler-service-%s' => 'Boiler Servicing %s | Gas Safe, Fixed Price',
+            'emergency-boiler-repair-%s' => 'Emergency Boiler Repair %s | Same Day',
+        ];
+        foreach (mbgroupltd_seo_locations() as $slug => $label) {
+            foreach ($patterns as $path => $format) {
+                $titles['/' . sprintf($path, $slug) . '/'] = sprintf($format, $label);
+            }
+        }
+        $tuned = [
             '/contact-us/' => 'Call 020 8150 2025 | Boiler Engineer North London',
-            '/boiler-installation-north-london/' => 'Boiler Installation North London | Fixed Price',
-            '/boiler-repair-north-london/' => 'Boiler Repair North London | Same-Day Gas Safe',
-            '/boiler-service-north-london/' => 'Boiler Servicing North London | Gas Safe, Fixed Price',
-            '/emergency-boiler-repair-north-london/' => 'Emergency Boiler Repair North London | Same Day',
             '/boiler-installation-potters-bar/' => 'Boiler Installation Potters Bar | Call 020 8150 2025',
             '/boiler-repair-potters-bar/' => 'Boiler Repair Potters Bar | Call 020 8150 2025',
             '/boiler-service-potters-bar/' => 'Boiler Servicing Potters Bar | Call 020 8150 2025',
@@ -426,13 +431,26 @@ if (!function_exists('mbgroupltd_gsc_title_overrides')) {
             '/' => 'Meraboiler | Boiler Installation and Reviews',
             '/blog/boiler-finance-london-pay-monthly-0-interest/' => '0% Boiler Finance Explained | What to Check',
         ];
+        return array_merge($titles, $tuned);
     }
 }
 
 if (!function_exists('mbgroupltd_gsc_description_overrides')) {
     function mbgroupltd_gsc_description_overrides()
     {
-        return [
+        $descriptions = [];
+        $patterns = [
+            'boiler-installation-%s' => 'Fixed-price boiler installation in %s. Gas Safe engineers and a written quote before we start. Call 020 8150 2025.',
+            'boiler-repair-%s' => 'Boiler repair in %s. Same-day Gas Safe callouts and a fixed price before any work starts. Call 020 8150 2025.',
+            'boiler-service-%s' => 'Annual boiler servicing in %s. Gas Safe engineers, fixed price, landlord and homeowner visits. Call 020 8150 2025.',
+            'emergency-boiler-repair-%s' => 'Emergency boiler repair in %s. Same-day Gas Safe engineer and a fixed quote. Call 020 8150 2025.',
+        ];
+        foreach (mbgroupltd_seo_locations() as $slug => $label) {
+            foreach ($patterns as $path => $format) {
+                $descriptions['/' . sprintf($path, $slug) . '/'] = sprintf($format, $label);
+            }
+        }
+        $tuned = [
             '/contact-us/' => 'Gas Safe boiler repair and installation in North London and Potters Bar. Call 020 8150 2025 for a fixed-price quote.',
             '/boiler-installation-north-london/' => 'Fixed-price boiler installation in North London. Gas Safe engineers and next-day fitting. Call 020 8150 2025.',
             '/boiler-repair-north-london/' => 'Boiler repair across North London and Potters Bar. Same-day Gas Safe callouts and a fixed price before any work starts.',
@@ -446,6 +464,7 @@ if (!function_exists('mbgroupltd_gsc_description_overrides')) {
             '/' => 'Meraboiler reviews and fixed-price boiler installation from £1,680. Gas Safe engineers. Call 020 8150 2025.',
             '/blog/boiler-finance-london-pay-monthly-0-interest/' => 'A guide to 0% boiler finance: what the offer means, what to check in the terms, and how a fixed-price quote compares. Call 020 8150 2025.',
         ];
+        return array_merge($descriptions, $tuned);
     }
 }
 

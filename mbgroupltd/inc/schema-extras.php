@@ -60,12 +60,6 @@ function mbgroupltd_local_business_schema()
                 'closes' => '17:00',
             ],
         ],
-        'aggregateRating' => [
-            '@type' => 'AggregateRating',
-            'ratingValue' => $facts['google_rating'] ?? '4.0',
-            'reviewCount' => $facts['google_review_count'] ?? '271',
-            'bestRating' => '5',
-        ],
         'sameAs' => array_values(array_filter([
             $facts['facebook'] ?? 'https://www.facebook.com/officialMeraBoiler/',
             $facts['instagram'] ?? 'https://www.instagram.com/meraboiler/',
@@ -125,27 +119,6 @@ add_action('wp_footer', static function () {
         return;
     }
     $blocks = [mbgroupltd_local_business_schema()];
-
-    // When Yoast/Rank Math is absent, also emit basic Organization + WebPage.
-    if (!function_exists('mbgroupltd_has_external_seo_plugin') || !mbgroupltd_has_external_seo_plugin()) {
-        $blocks[] = [
-            '@context' => 'https://schema.org',
-            '@type' => 'Organization',
-            '@id' => home_url('/#organization'),
-            'name' => get_bloginfo('name'),
-            'url' => home_url('/'),
-            'telephone' => '+442081502025',
-            'logo' => function_exists('mbgroupltd_get_og_image_url') ? mbgroupltd_get_og_image_url() : '',
-        ];
-        $blocks[] = [
-            '@context' => 'https://schema.org',
-            '@type' => 'WebPage',
-            '@id' => home_url('/#webpage'),
-            'name' => wp_get_document_title(),
-            'url' => function_exists('mbgroupltd_get_canonical_url') ? mbgroupltd_get_canonical_url() : home_url('/'),
-            'isPartOf' => ['@id' => home_url('/#website')],
-        ];
-    }
 
     if (is_front_page()) {
         $faq = mbgroupltd_faq_page_schema();

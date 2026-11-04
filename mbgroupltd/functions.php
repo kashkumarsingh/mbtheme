@@ -144,7 +144,9 @@ function mbgroupltd_enqueue_scripts()
 {
     wp_deregister_script('jquery');
 
-    wp_enqueue_script('jquery', 'https://code.jquery.com/jquery-3.6.0.min.js', [], null, true);
+    $jquery_path = get_template_directory() . '/assets/js/jquery.min.js';
+    $jquery_ver = file_exists($jquery_path) ? filemtime($jquery_path) : '3.6.0';
+    wp_enqueue_script('jquery', get_template_directory_uri() . '/assets/js/jquery.min.js', [], $jquery_ver, true);
 
     // Bootstrap JS bundle removed with the CSS: nothing in the theme uses
     // collapse/dropdown/modal JS (custom drawer + dropdown code instead).
@@ -411,15 +413,14 @@ function mbgroupltd_get_og_image_url()
         }
     }
 
-    $logo_id = get_theme_mod('custom_logo');
-    if (!empty($logo_id)) {
-        $logo_url = wp_get_attachment_image_url($logo_id, 'full');
-        if (!empty($logo_url)) {
-            return $logo_url;
-        }
+    // Sitewide share image. The header logo is ~280×64 and is a poor
+    // WhatsApp/Facebook card. Prefer a 1200×630 file dropped in the theme.
+    $branded = get_template_directory() . '/assets/images/og-default.jpg';
+    if (file_exists($branded)) {
+        return get_template_directory_uri() . '/assets/images/og-default.jpg';
     }
 
-    return mbgroupltd_image('logo-meraboiler.png');
+    return mbgroupltd_image('service-installation.png');
 }
 
 /**

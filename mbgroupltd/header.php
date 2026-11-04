@@ -27,32 +27,6 @@
     <meta name="twitter:description" content="<?php echo esc_attr($meta_description); ?>">
     <meta name="twitter:image" content="<?php echo esc_url($og_image); ?>">
     <?php endif; ?>
-    <?php if (!$has_external_seo_plugin) :
-      $organization_schema = [
-        '@context' => 'https://schema.org',
-        '@type' => 'Organization',
-        'name' => get_bloginfo('name'),
-        'url' => home_url('/'),
-        'logo' => $og_image,
-        'telephone' => '+442081502025',
-      ];
-
-      $webpage_schema = [
-        '@context' => 'https://schema.org',
-        '@type' => 'WebPage',
-        'name' => wp_get_document_title(),
-        'url' => $canonical_url,
-        'description' => $meta_description,
-        'isPartOf' => [
-          '@type' => 'WebSite',
-          'name' => get_bloginfo('name'),
-          'url' => home_url('/'),
-        ],
-      ];
-    ?>
-    <script type="application/ld+json"><?php echo wp_json_encode($organization_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?></script>
-    <script type="application/ld+json"><?php echo wp_json_encode($webpage_schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?></script>
-    <?php endif; ?>
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
