@@ -34,7 +34,7 @@
 <!-- Header -->
 <header class="header-section dc-header sticky top-0 z-50 bg-white transition-transform duration-300">
     <div id="dc-topbar" class="dc-topbar" role="region" aria-label="Winter offer">
-        <a class="dc-topbar__msg" href="<?php echo esc_url(home_url('/quote/')); ?>"><span class="dc-topbar__tag">WINTER OFFER</span><span>Bosch Greenstar 25kW, fully fitted from &pound;1,890</span><b>Request this offer</b></a>
+        <a class="dc-topbar__msg" href="<?php echo esc_url(home_url('/quote/')); ?>"><span class="dc-topbar__tag">WINTER OFFER</span><span>Bosch Greenstar 25kW, fully fitted from &pound;1,890*</span><b>Request this offer</b></a>
         <a class="dc-topbar__msg" href="<?php echo esc_url(home_url('/quote/')); ?>" aria-hidden="true" tabindex="-1"><span class="dc-topbar__tag">WINTER OFFER</span><span>Gas Safe engineers and a fixed price agreed on the day</span><b>Get a quote</b></a>
         <a class="dc-topbar__msg" href="<?php echo esc_url(home_url('/quote/')); ?>" aria-hidden="true" tabindex="-1"><span class="dc-topbar__tag">WINTER OFFER</span><span>Same-day installation across London. Terms apply.</span><b>Request this offer</b></a>
         <button type="button" id="dc-topbar-close" class="dc-topbar__close" aria-label="Close announcement banner">Close</button>

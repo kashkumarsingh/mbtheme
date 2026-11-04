@@ -12,7 +12,8 @@ $dc_promo_slides = [
         'points' => ['Fitted by Gas Safe engineers', 'Fixed price agreed on the day', 'Up to a 7-year guarantee'],
         'image' => 'boiler-bosch-greenstar.png',
         'price_label' => 'From',
-        'price' => '&pound;1,890',
+        'price' => '&pound;1,890*',
+        'note' => '*Fixed price confirmed after a free survey. Terms apply.',
         'price_class' => 'dc-promo__price',
         'cta_text' => 'Request this offer',
         'cta_class' => '',
@@ -70,6 +71,9 @@ $dc_promo_slides = [
                             </div>
                             <a class="dc-btn <?php echo esc_attr($dc_s['cta_class']); ?>" href="<?php echo esc_url($dc_s['cta_url']); ?>"><?php echo esc_html($dc_s['cta_text']); ?></a>
                         </div>
+                        <?php if (!empty($dc_s['note'])) : ?>
+                        <p class="dc-promo__note <?php echo $dc_s['theme'] === 'dark' ? 'dc-promo__note--dark' : ''; ?>"><?php echo esc_html($dc_s['note']); ?></p>
+                        <?php endif; ?>
                     </div>
                 </div>
                 <?php endforeach; ?>
