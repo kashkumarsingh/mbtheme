@@ -370,7 +370,7 @@ if (!function_exists('mbgroupltd_legacy_seo_redirects')) {
         // at the root gets 301'd there. Guards skip real blog archives
         // (/blog/page/2/, /blog/2024/05/, /blog/boiler-advice/).
         if (preg_match('#^/blog/([a-z][a-z0-9-]*)/$#', $path, $m)) {
-            $target = get_page_by_path($m[1]);
+            $target = get_page_by_path($m[1], OBJECT, ['page', 'post']);
             if ($target instanceof WP_Post && in_array($target->post_status, ['publish', 'private'], true)) {
                 wp_safe_redirect(get_permalink($target), 301);
                 exit;
@@ -379,6 +379,10 @@ if (!function_exists('mbgroupltd_legacy_seo_redirects')) {
         }
     }
 }
+// wp_loaded runs before template resolution; some /blog/ 404s never reach
+// template_redirect (observed on live), so the map is checked on both hooks.
+// The function exits after redirecting, so double registration is harmless.
+add_action('wp_loaded', 'mbgroupltd_legacy_seo_redirects', 1);
 add_action('template_redirect', 'mbgroupltd_legacy_seo_redirects', 1);
 
 if (!function_exists('mbgroupltd_force_canonical_host')) {
