@@ -238,11 +238,27 @@ add_action('init', 'mbgroupltd_ensure_thank_you_page', 20);
 /**
  * Publish Potters Bar service pages on the next front-end or admin load.
  * page-{slug}.php supplies the layout once the page exists. No SQL import.
+ * The stored flag is a cache, not a guarantee: a database restore can drop
+ * the pages while the flag survives (Semrush found the resulting 404s),
+ * so verify the pages still exist with one query before trusting it.
  */
 function mbgroupltd_ensure_potters_bar_pages()
 {
+    $dc_pb_slugs = ['boiler-installation-potters-bar', 'boiler-repair-potters-bar', 'boiler-service-potters-bar', 'emergency-boiler-repair-potters-bar'];
+
     if (get_option('mbgroupltd_potters_bar_pages_ready')) {
-        return;
+        $dc_pb_existing = get_posts([
+            'post_type' => 'page',
+            'post_status' => 'publish',
+            'post_name__in' => $dc_pb_slugs,
+            'posts_per_page' => 4,
+            'fields' => 'ids',
+            'no_found_rows' => true,
+        ]);
+        if (count($dc_pb_existing) >= count($dc_pb_slugs)) {
+            return;
+        }
+        // At least one slug is missing (e.g. DB restore): fall through and recreate.
     }
 
     $pages = [

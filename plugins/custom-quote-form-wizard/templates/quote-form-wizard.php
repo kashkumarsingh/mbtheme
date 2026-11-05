@@ -58,7 +58,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
                                     <input id="q1Option1" type="radio" name="q1" value="Main Gas"
                                         class="form-control form-check-input" data-parsley-trigger="change" required>
 
-                                    <label for="q1Option1"><img
+                                    <label for="q1Option1"><img alt=""
                                             src="<?php echo $plugin_url . 'assets/images/svg/GAS.svg'; ?>"
                                             class="img-responsive"><span>Main Gas</span></label>
 
@@ -75,7 +75,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q1Option2">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/LPG.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/LPG.svg'; ?>"
                                             class="img-responsive"><span>LPG</span>
 
                                     </label>
@@ -93,7 +93,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q1Option3" required>
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/Electric.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/Electric.svg'; ?>"
                                             class="img-responsive"><span>Electric</span>
 
                                     </label>
@@ -125,7 +125,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q2Option1">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/combi_boiler.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/combi_boiler.svg'; ?>"
                                             class="img-responsive"><span>Combi</span>
 
                                     </label>
@@ -141,7 +141,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
                                     <input id="q2Option2" type="radio" name="q2" value="Boiler & Tank"
                                         class="form-control" data-parsley-trigger="change" required>
 
-                                    <label for="q2Option2"><img
+                                    <label for="q2Option2"><img alt=""
                                             src="<?php echo $plugin_url . 'assets/images/svg/boiler_and_tank.svg'; ?>"
                                             class="img-responsive"><span>Boiler & Tank</span></label>
 
@@ -158,7 +158,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q2Option3" data-parsley-trigger="change" required>
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/back_boiler.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/back_boiler.svg'; ?>"
                                             class="img-responsive"><span>Back
 
                                             Boiler</span>
@@ -189,7 +189,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
                                     <input id="q3Option1" type="radio" name="q3" value="Combi"
                                         data-parsley-trigger="change" class="form-control" required>
 
-                                    <label for="q3Option1"><img
+                                    <label for="q3Option1"><img alt=""
                                             src="<?php echo $plugin_url . 'assets/images/svg/combi_boiler.svg'; ?>"
                                             class="img-responsive"><span>Combi</span></label>
 
@@ -204,7 +204,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
                                     <input id="q3Option2" type="radio" name="q3" data-parsley-trigger="change"
                                         value="Boiler & Tank" class="form-control" required>
 
-                                    <label for="q3Option2"><img
+                                    <label for="q3Option2"><img alt=""
                                             src="<?php echo $plugin_url . 'assets/images/svg/boiler_and_tank.svg'; ?>"
                                             class="img-responsive"><span>Boiler & Tank</span></label>
 
@@ -219,7 +219,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
                                     <input id="q3Option3" type="radio" name="q3" value="Cylinder Only"
                                         class="form-control" data-parsley-trigger="change" required>
 
-                                    <label for="q3Option3"><img
+                                    <label for="q3Option3"><img alt=""
                                             src="<?php echo $plugin_url . 'assets/images/svg/cylinder.svg'; ?>"
                                             class="img-responsive"><span>Cylinder Only</span></label>
 
@@ -234,7 +234,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
                                     <input id="q3Option4" type="radio" name="q3" value="Boiler & unvented tank"
                                         class="form-control" data-parsley-trigger="change" required>
 
-                                    <label for="q3Option4"><img
+                                    <label for="q3Option4"><img alt=""
                                             src="<?php echo $plugin_url . 'assets/images/svg/boiler_unvented_tank.svg'; ?>"
                                             class="img-responsive"><span>Boiler & unvented
 
@@ -265,7 +265,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q4Option1">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/detached.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/detached.svg'; ?>"
                                             class="img-responsive">
 
                                         <span>Detached</span>
@@ -285,7 +285,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q4Option2">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/semi_detached.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/semi_detached.svg'; ?>"
                                             class="img-responsive">
 
                                         <span>Semi-Detached</span>
@@ -305,7 +305,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q4Option3">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/terraced.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/terraced.svg'; ?>"
                                             class="img-responsive">
 
                                         <span>Terrace</span>
@@ -325,7 +325,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q4Option4">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/flats.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/flats.svg'; ?>"
                                             class="img-responsive">
 
                                         <span>Flat</span>
@@ -345,7 +345,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="answer_1">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/Bungalow.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/Bungalow.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -382,7 +382,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q5Option1">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/one_bedroom.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/one_bedroom.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -406,7 +406,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q5Option2">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/two_bedroom.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/two_bedroom.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -430,7 +430,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q5Option3">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/three_bedroom.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/three_bedroom.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -454,7 +454,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q5Option4">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/three_plus_bedroom.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/three_plus_bedroom.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -490,7 +490,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q6Option1">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/zero_bath.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/zero_bath.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -514,7 +514,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q6Option2">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/one_bath.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/one_bath.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -538,7 +538,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q6Option3">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/two_bath.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/two_bath.svg'; ?>"
                                             class="img-responsive" required>
 
 
@@ -562,7 +562,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q6Option4">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/three_plus_bath.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/three_plus_bath.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -598,7 +598,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q7Option1">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/zero_shower.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/zero_shower.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -622,7 +622,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q7Option2">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/one_shower.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/one_shower.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -646,7 +646,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q7Option3">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/two_shower.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/two_shower.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -670,7 +670,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q7Option4">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/three_plus_shower.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/three_plus_shower.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -710,7 +710,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q8Option2">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/two_people.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/two_people.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -736,7 +736,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q8Option4">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/four_people.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/four_people.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -760,7 +760,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q8Option5">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/five_people.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/five_people.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -798,7 +798,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="answer_1">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/utility_room.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/utility_room.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -822,7 +822,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q9Option1">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/kitchen.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/kitchen.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -846,7 +846,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q9Option2">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/garage.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/garage.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -870,7 +870,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q9Option3">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/airing_cupboard.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/airing_cupboard.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -894,7 +894,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q9Option4">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/living_room.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/living_room.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -918,7 +918,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q9Option4">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/other_room.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/other_room.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -955,7 +955,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q10Option1">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/same_place.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/same_place.svg'; ?>"
                                             class="img-responsive">
 
                                         <span>Same</span>
@@ -977,7 +977,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q10Option2">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/different_place.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/different_place.svg'; ?>"
                                             class="img-responsive">
 
                                         <span>Not Same</span>
@@ -1011,7 +1011,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q11Option1">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/pitched_roof.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/pitched_roof.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -1035,7 +1035,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q11Option2">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/flat_roof.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/flat_roof.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -1059,7 +1059,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q11Option3">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/external_wall.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/external_wall.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -1101,7 +1101,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q12Option1">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/less_than_two_meter.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/less_than_two_meter.svg'; ?>"
                                             class="img-responsive">
 
                                         <span>Less Than 2 Metre</span>
@@ -1119,7 +1119,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
                                     <input id="q12Option2" type="radio" name="q12" value="More than 2 metre"
                                         class="form-control" data-parsley-trigger="change" required>
 
-                                    <label for="q12Option2"><img
+                                    <label for="q12Option2"><img alt=""
                                             src="<?php echo $plugin_url . 'assets/images/svg/more_than_two_meter.svg'; ?>"
                                             class="img-responsive">
 
@@ -1149,7 +1149,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
                                     <input id="q13Option1" type="radio" name="q13" value="Less Than 2 Metre"
                                         class="form-control" data-parsley-trigger="change" required>
 
-                                    <label for="q13Option1"><img
+                                    <label for="q13Option1"><img alt=""
                                             src="<?php echo $plugin_url . 'assets/images/svg/less_than_two_meters.svg'; ?>"
                                             class="img-responsive">
 
@@ -1166,7 +1166,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
                                     <input id="q13Option2" type="radio" name="q13" value="More than 2 metre"
                                         class="form-control" data-parsley-trigger="change" required>
 
-                                    <label for="q13Option2"><img
+                                    <label for="q13Option2"><img alt=""
                                             src="<?php echo $plugin_url . 'assets/images/svg/more_than_two_meter.svg'; ?>"
                                             class="img-responsive">
 
@@ -1198,7 +1198,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q14Option1">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/carport_yes.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/carport_yes.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -1222,7 +1222,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q14Option2">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/carport_no.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/carport_no.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -1259,7 +1259,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q15Option1">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/less_than_30_cm.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/less_than_30_cm.svg'; ?>"
                                             class="img-responsive">
 
 
@@ -1279,7 +1279,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
                                     <input id="q15Option2" type="radio" name="q15" value="More than 30cm"
                                         class="form-control" data-parsley-trigger="change" required>
 
-                                    <label for="q15Option2"><img
+                                    <label for="q15Option2"><img alt=""
                                             src="<?php echo $plugin_url . 'assets/images/svg/more_than_30_cm.svg'; ?>"
                                             class="img-responsive">
 
@@ -1312,7 +1312,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
 
                                     <label for="q16Option1">
 
-                                        <img src="<?php echo $plugin_url . 'assets/images/svg/gasmeter_5_meter.svg'; ?>"
+                                        <img alt="" src="<?php echo $plugin_url . 'assets/images/svg/gasmeter_5_meter.svg'; ?>"
                                             class="img-responsive">
 
                                         <span>5 meter</span></label>
@@ -1328,7 +1328,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
                                     <input id="q16Option2" type="radio" name="q16" value="5 meter Plus"
                                         class="form-control" data-parsley-trigger="change" required>
 
-                                    <label for="q16Option2"><img
+                                    <label for="q16Option2"><img alt=""
                                             src="<?php echo $plugin_url . 'assets/images/svg/gasmeter_5_plus_meter.svg'; ?>"
                                             class="img-responsive">
 
@@ -1345,7 +1345,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
                                     <input id="q16Option3" type="radio" name="q16" value="Not Sure" class="form-control"
                                         data-parsley-trigger="change" required>
 
-                                    <label for="q16Option3"><img
+                                    <label for="q16Option3"><img alt=""
                                             src="<?php echo $plugin_url . 'assets/images/svg/gasmeter_not_sure.svg'; ?>"
                                             class="img-responsive">
 
@@ -1603,7 +1603,7 @@ $prefill_postcode = $prefill_data['cust_pin'] ?? '';
                                 <div class="buttons-wrapper">
                                     <button type="submit" id="submitBtn" class="btn btn-danger"
                                         name="quote_submit">Submit
-                                        <img id="loader"
+                                        <img alt="" id="loader"
                                             src="<?php echo cqf_shared_asset_url('images/loader.svg'); ?>"
                                             width="30" height="30" alt="" class="d-none" hidden>
 

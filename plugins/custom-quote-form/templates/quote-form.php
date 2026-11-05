@@ -88,7 +88,7 @@
           <div class="cta-wrapper">
             <button type="submit" id="submitFormButton" class="btn btn-danger btn-lg rounded-pill mt-3 d-flex">
               <span id="buttonText" class="text-white">Quick Contact</span>
-              <img id="loader" src="<?php echo cqf_shared_asset_url('images/loader.svg'); ?>" width="30px"
+              <img alt="" id="loader" src="<?php echo cqf_shared_asset_url('images/loader.svg'); ?>" width="30px"
                 height="30px" alt="Loader" class="d-none">
             </button>
           </div>

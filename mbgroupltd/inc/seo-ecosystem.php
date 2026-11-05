@@ -353,14 +353,30 @@ if (!function_exists('mbgroupltd_legacy_seo_redirects')) {
             '/scottish-power-boiler-service/' => '/boiler-service-london/',
             '/next-day-boiler-installation/' => '/boiler-installation/',
             '/central-heating-service-london/' => '/boiler-service-london/',
+            // These guides live at the site root but internal links (and old
+            // Semrush findings) point at them under /blog/. 301 to the real slug.
+            '/blog/boiler-noise-problems-uk/' => '/boiler-noise-problems-uk/',
+            '/blog/central-heating-installation-cost-uk/' => '/central-heating-installation-cost-uk',
+            '/blog/central-heating-system-types-uk/' => '/central-heating-system-types-uk',
+            '/blog/how-a-central-heating-system-works/' => '/how-a-central-heating-system-works',
         ];
 
-        if (!isset($redirects[$path])) {
-            return;
+        if (isset($redirects[$path])) {
+            wp_safe_redirect(home_url($redirects[$path]), 301);
+            exit;
         }
 
-        wp_safe_redirect(home_url($redirects[$path]), 301);
-        exit;
+        // Generic fallback: any single-segment /blog/{slug}/ that 404s but exists
+        // at the root gets 301'd there. Guards skip real blog archives
+        // (/blog/page/2/, /blog/2024/05/, /blog/boiler-advice/).
+        if (preg_match('#^/blog/([a-z][a-z0-9-]*)/$#', $path, $m)) {
+            $target = get_page_by_path($m[1]);
+            if ($target instanceof WP_Post && in_array($target->post_status, ['publish', 'private'], true)) {
+                wp_safe_redirect(get_permalink($target), 301);
+                exit;
+            }
+            return;
+        }
     }
 }
 add_action('template_redirect', 'mbgroupltd_legacy_seo_redirects', 1);
@@ -423,6 +439,9 @@ if (!function_exists('mbgroupltd_gsc_title_overrides')) {
         }
         $tuned = [
             '/contact-us/' => 'Call 020 8150 2025 | Boiler Engineer North London',
+            // Distinct from /emergency-boiler-repair/ so the two titles are not near-duplicates.
+            '/services/emergency-repair/' => '24/7 Emergency Boiler Repair | Same-Day Gas Safe Engineer',
+            '/boiler-guide/' => 'Boiler Guide: Costs, Repairs and Servicing Advice | Meraboiler',
             '/boiler-installation-potters-bar/' => 'Boiler Installation Potters Bar | Call 020 8150 2025',
             '/boiler-repair-potters-bar/' => 'Boiler Repair Potters Bar | Call 020 8150 2025',
             '/boiler-service-potters-bar/' => 'Boiler Servicing Potters Bar | Call 020 8150 2025',
@@ -451,8 +470,18 @@ if (!function_exists('mbgroupltd_gsc_description_overrides')) {
             }
         }
         $tuned = [
+            '/quote/' => 'Get a fixed-price boiler quote in 60 seconds. Enter your postcode, answer a few questions and get your price before we visit.',
+            '/services/' => 'Boiler installation, repair, servicing, power flushing, smart thermostats and central heating by Gas Safe engineers. Fixed prices. Call 020 8150 2025.',
+            '/services/boiler-installation/' => 'New boiler installation fitted in a day. Fixed price, parts and labour included, up to a 12-year guarantee. Call 020 8150 2025.',
+            '/services/boiler-repair/' => 'Boiler repair with a fixed price agreed before any work starts. Same-day Gas Safe engineers. Call 020 8150 2025.',
+            '/services/boiler-servicing/' => 'Annual boiler servicing by Gas Safe engineers. Protects your guarantee and keeps the appliance safe. Call 020 8150 2025.',
+            '/services/central-heating-installation/' => 'Central heating installation by Gas Safe engineers. Radiators, pipework and controls with a fixed written quote. Call 020 8150 2025.',
+            '/services/emergency-repair/' => '24/7 emergency boiler repair with a same-day Gas Safe engineer and a fixed quote before work starts. Call 020 8150 2025.',
+            '/services/power-flushing/' => 'Power flushing for cold radiators and sludge-blocked systems. Fixed price, done in a day. Call 020 8150 2025.',
+            '/services/smart-thermostat-fitting/' => 'Smart thermostat installation for boilers. Control heating from your phone and cut energy waste. Call 020 8150 2025.',
+            '/services/underfloor-heating/' => 'Underfloor heating installed with your new boiler. A suitability survey and fixed quote. Call 020 8150 2025.',
+            '/boiler-guide/' => 'Boiler advice and pricing tips: costs, finance, repairs, servicing and efficiency guides from Gas Safe engineers.',
             '/contact-us/' => 'Gas Safe boiler repair and installation in North London and Potters Bar. Call 020 8150 2025 for a fixed-price quote.',
-            '/boiler-installation-north-london/' => 'Fixed-price boiler installation in North London. Gas Safe engineers and next-day fitting. Call 020 8150 2025.',
             '/boiler-repair-north-london/' => 'Boiler repair across North London and Potters Bar. Same-day Gas Safe callouts and a fixed price before any work starts.',
             '/boiler-service-north-london/' => 'Annual boiler servicing in North London. Gas Safe engineers, fixed price, landlord and homeowner visits.',
             '/emergency-boiler-repair-north-london/' => 'Emergency boiler repair in North London. Same-day Gas Safe engineer, fixed quote, no call-out surprise.',
