@@ -532,7 +532,9 @@ if (!function_exists('mbgroupltd_apply_gsc_title')) {
     }
 }
 add_filter('wpseo_title', 'mbgroupltd_apply_gsc_title', 100);
-add_filter('pre_get_document_title', 'mbgroupltd_apply_gsc_title', 100);
+// 120 runs after job-services.php's per-page title filter (110), so the
+// tuned GSC titles win on /services/* pages instead of being overwritten.
+add_filter('pre_get_document_title', 'mbgroupltd_apply_gsc_title', 120);
 
 if (!function_exists('mbgroupltd_apply_gsc_description')) {
     function mbgroupltd_apply_gsc_description($description)
