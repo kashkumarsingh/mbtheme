@@ -353,12 +353,6 @@ if (!function_exists('mbgroupltd_legacy_seo_redirects')) {
             '/scottish-power-boiler-service/' => '/boiler-service-london/',
             '/next-day-boiler-installation/' => '/boiler-installation/',
             '/central-heating-service-london/' => '/boiler-service-london/',
-            // These guides live at the site root but internal links (and old
-            // Semrush findings) point at them under /blog/. 301 to the real slug.
-            '/blog/boiler-noise-problems-uk/' => '/boiler-noise-problems-uk/',
-            '/blog/central-heating-installation-cost-uk/' => '/central-heating-installation-cost-uk',
-            '/blog/central-heating-system-types-uk/' => '/central-heating-system-types-uk',
-            '/blog/how-a-central-heating-system-works/' => '/how-a-central-heating-system-works',
         ];
 
         if (isset($redirects[$path])) {
@@ -375,19 +369,34 @@ if (!function_exists('mbgroupltd_legacy_seo_redirects')) {
             exit;
         }
 
-        // Generic fallback: any single-segment /blog/{slug}/ that 404s but exists
-        // at the root gets 301'd there. Guards skip real blog archives
-        // (/blog/page/2/, /blog/2024/05/, /blog/boiler-advice/).
-        if (preg_match('#^/blog/([a-z][a-z0-9-]*)/$#', $path, $m)) {
-            $target = get_page_by_path($m[1], OBJECT, ['page', 'post']);
-            if ($target instanceof WP_Post && in_array($target->post_status, ['publish', 'private'], true)) {
-                wp_safe_redirect(get_permalink($target), 301);
-                exit;
+        // Old root post URLs (/boiler-noise-problems-uk/) now live under /blog/.
+        // Skip when a page owns the same slug.
+        if (preg_match('#^/([a-z][a-z0-9-]*)/$#', $path, $m) && !get_page_by_path($m[1], OBJECT, 'page')) {
+            $post = get_page_by_path($m[1], OBJECT, 'post');
+            if ($post instanceof WP_Post && $post->post_status === 'publish') {
+                $dest = get_permalink($post);
+                if ($dest && untrailingslashit($dest) !== untrailingslashit(home_url($path))) {
+                    wp_safe_redirect($dest, 301);
+                    exit;
+                }
             }
-            return;
         }
     }
 }
+
+/**
+ * Single posts live at /blog/{slug}/. Pages stay at the root.
+ */
+function mbgroupltd_use_blog_prefix_permalinks()
+{
+    $structure = '/blog/%postname%/';
+    if (get_option('permalink_structure') === $structure) {
+        return;
+    }
+    update_option('permalink_structure', $structure);
+    flush_rewrite_rules(false);
+}
+add_action('init', 'mbgroupltd_use_blog_prefix_permalinks', 5);
 // wp_loaded runs before template resolution; some /blog/ 404s never reach
 // template_redirect (observed on live), so the map is checked on both hooks.
 // The function exits after redirecting, so double registration is harmless.
