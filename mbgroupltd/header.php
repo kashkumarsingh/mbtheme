@@ -80,6 +80,16 @@
                     }
                     if ($menu_items) {
                         foreach ($menu_items as $item) {
+                            $item_path = untrailingslashit((string) wp_parse_url($item->url, PHP_URL_PATH));
+                            if ($item_path === '/boiler-guide' || strcasecmp((string) $item->title, 'Boiler Guide') === 0) {
+                                $item->url = $dc_blog_url;
+                                $item->title = 'Blog';
+                                if (is_home()) {
+                                    $item->classes[] = 'current-menu-item';
+                                }
+                            }
+                        }
+                        foreach ($menu_items as $item) {
                             if ($item->menu_item_parent == 0) {
                                 $child_items = array_filter($menu_items, function ($submenu) use ($item) {
                                     return $submenu->menu_item_parent == $item->ID;

@@ -366,6 +366,15 @@ if (!function_exists('mbgroupltd_legacy_seo_redirects')) {
             exit;
         }
 
+        if ($path === '/boiler-guide/' || preg_match('#^/boiler-guide/page/(\d+)/$#', $path, $paged)) {
+            $target = '/blog/';
+            if (!empty($paged[1]) && (int) $paged[1] > 1) {
+                $target = '/blog/page/' . (int) $paged[1] . '/';
+            }
+            wp_safe_redirect(home_url($target), 301);
+            exit;
+        }
+
         // Generic fallback: any single-segment /blog/{slug}/ that 404s but exists
         // at the root gets 301'd there. Guards skip real blog archives
         // (/blog/page/2/, /blog/2024/05/, /blog/boiler-advice/).
@@ -445,7 +454,7 @@ if (!function_exists('mbgroupltd_gsc_title_overrides')) {
             '/contact-us/' => 'Call 020 8150 2025 | Boiler Engineer North London',
             // Distinct from /emergency-boiler-repair/ so the two titles are not near-duplicates.
             '/services/emergency-repair/' => '24/7 Emergency Boiler Repair | Same-Day Gas Safe Engineer',
-            '/boiler-guide/' => 'Boiler Guide: Costs, Repairs and Servicing Advice | Meraboiler',
+            '/blog/' => 'Boiler Guide: Costs, Repairs and Servicing Advice | Meraboiler',
             '/boiler-installation-potters-bar/' => 'Boiler Installation Potters Bar | Call 020 8150 2025',
             '/boiler-repair-potters-bar/' => 'Boiler Repair Potters Bar | Call 020 8150 2025',
             '/boiler-service-potters-bar/' => 'Boiler Servicing Potters Bar | Call 020 8150 2025',
@@ -484,7 +493,7 @@ if (!function_exists('mbgroupltd_gsc_description_overrides')) {
             '/services/power-flushing/' => 'Power flushing for cold radiators and sludge-blocked systems. Fixed price, done in a day. Call 020 8150 2025.',
             '/services/smart-thermostat-fitting/' => 'Smart thermostat installation for boilers. Control heating from your phone and cut energy waste. Call 020 8150 2025.',
             '/services/underfloor-heating/' => 'Underfloor heating installed with your new boiler. A suitability survey and fixed quote. Call 020 8150 2025.',
-            '/boiler-guide/' => 'Boiler advice and pricing tips: costs, finance, repairs, servicing and efficiency guides from Gas Safe engineers.',
+            '/blog/' => 'Boiler advice and pricing tips: costs, finance, repairs, servicing and efficiency guides from Gas Safe engineers.',
             '/contact-us/' => 'Gas Safe boiler repair and installation in North London and Potters Bar. Call 020 8150 2025 for a fixed-price quote.',
             '/boiler-repair-north-london/' => 'Boiler repair across North London and Potters Bar. Same-day Gas Safe callouts and a fixed price before any work starts.',
             '/boiler-service-north-london/' => 'Annual boiler servicing in North London. Gas Safe engineers, fixed price, landlord and homeowner visits.',

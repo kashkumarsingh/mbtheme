@@ -301,6 +301,64 @@ function mbgroupltd_ensure_potters_bar_pages()
 add_action('init', 'mbgroupltd_ensure_potters_bar_pages', 21);
 
 /**
+ * /blog/ was a second WordPress install. After that folder is removed,
+ * the main site needs a Page with slug blog set as the posts page.
+ */
+function mbgroupltd_ensure_blog_page()
+{
+    $page_id = (int) get_option('page_for_posts');
+    $page = $page_id ? get_post($page_id) : null;
+    if ($page instanceof WP_Post && $page->post_status === 'publish' && $page->post_name === 'blog') {
+        return;
+    }
+
+    $existing = get_page_by_path('blog');
+    if ($existing instanceof WP_Post) {
+        if ($existing->post_status !== 'publish') {
+            wp_update_post([
+                'ID' => (int) $existing->ID,
+                'post_status' => 'publish',
+            ]);
+        }
+        $page_id = (int) $existing->ID;
+    } else {
+        $created = wp_insert_post([
+            'post_title' => 'Blog',
+            'post_name' => 'blog',
+            'post_status' => 'publish',
+            'post_type' => 'page',
+            'post_content' => '',
+            'post_author' => 1,
+        ], true);
+        if (is_wp_error($created) || !$created) {
+            return;
+        }
+        $page_id = (int) $created;
+    }
+
+    if (get_option('show_on_front') !== 'page') {
+        $front = get_page_by_path('home');
+        if (!$front instanceof WP_Post) {
+            $fronts = get_posts([
+                'post_type' => 'page',
+                'post_status' => 'publish',
+                'meta_key' => '_wp_page_template',
+                'meta_value' => 'front-page.php',
+                'posts_per_page' => 1,
+            ]);
+            $front = $fronts[0] ?? null;
+        }
+        if ($front instanceof WP_Post) {
+            update_option('show_on_front', 'page');
+            update_option('page_on_front', (int) $front->ID);
+        }
+    }
+
+    update_option('page_for_posts', $page_id);
+}
+add_action('init', 'mbgroupltd_ensure_blog_page', 22);
+
+/**
  * Prefer noindex on thank-you so tokenized conversion snapshots are not indexed.
  */
 function mbgroupltd_thank_you_robots($robots)
@@ -666,7 +724,7 @@ function mbgroupltd_nearby_url($path, $fallback = '/quote/')
 
 /**
  * Blog index (home.php) renders its own query at 7 posts per page.
- * Mirror that in the main query so /boiler-guide/page/N/ exists for every
+ * Mirror that in the main query so /blog/page/N/ exists for every
  * page the pager links to instead of 404ing on the main query count.
  */
 function mbgroupltd_blog_posts_per_page($query)
