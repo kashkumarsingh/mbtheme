@@ -36,7 +36,7 @@ if (!function_exists('mbgroupltd_service_hub_path')) {
         $hubs = [
             'installation' => '/boiler-installation/',
             'repair' => '/boiler-repair-near-me/',
-            'service' => '/boiler-service/',
+            'service' => '/boiler-service-london/',
             'emergency' => '/emergency-boiler-repair/',
         ];
 
@@ -353,6 +353,7 @@ if (!function_exists('mbgroupltd_legacy_seo_redirects')) {
             '/scottish-power-boiler-service/' => '/boiler-service-london/',
             '/next-day-boiler-installation/' => '/boiler-installation/',
             '/central-heating-service-london/' => '/boiler-service-london/',
+            '/boiler-service/' => '/boiler-service-london/',
         ];
 
         if (isset($redirects[$path])) {
@@ -366,6 +367,12 @@ if (!function_exists('mbgroupltd_legacy_seo_redirects')) {
                 $target = '/blog/page/' . (int) $paged[1] . '/';
             }
             wp_safe_redirect(home_url($target), 301);
+            exit;
+        }
+
+        // Old /boiler-guide/{slug}/ post URLs now live under /blog/{slug}/.
+        if (preg_match('#^/boiler-guide/([a-z0-9][a-z0-9-]*)/$#', $path, $guide) && $guide[1] !== 'page') {
+            wp_safe_redirect(home_url('/blog/' . $guide[1] . '/'), 301);
             exit;
         }
 
@@ -397,6 +404,21 @@ function mbgroupltd_use_blog_prefix_permalinks()
     flush_rewrite_rules(false);
 }
 add_action('init', 'mbgroupltd_use_blog_prefix_permalinks', 5);
+/**
+ * Keep redirecting URLs out of the Yoast sitemap: their pages still exist in
+ * WP but 301 elsewhere, so listing them gives Search Console "redirect" errors.
+ */
+add_filter('wpseo_exclude_from_sitemap_by_post_ids', static function ($ids) {
+    $ids = is_array($ids) ? $ids : [];
+    foreach (['boiler-guide', 'boiler-install-repair-in-north-london'] as $slug) {
+        $page = get_page_by_path($slug, OBJECT, 'page');
+        if ($page instanceof WP_Post) {
+            $ids[] = $page->ID;
+        }
+    }
+    return $ids;
+});
+
 // wp_loaded runs before template resolution; some /blog/ 404s never reach
 // template_redirect (observed on live), so the map is checked on both hooks.
 // The function exits after redirecting, so double registration is harmless.

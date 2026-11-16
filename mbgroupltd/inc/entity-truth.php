@@ -259,8 +259,8 @@ add_filter('robots_txt', static function ($output, $public) {
     foreach ($agents as $agent) {
         $output .= "User-agent: {$agent}\nAllow: /\n\n";
     }
-    if (stripos($output, 'llms.txt') === false) {
-        $output .= "# Curated LLM brief\n";
+    // Yoast already emits the Sitemap line; only add one if it is missing.
+    if (stripos($output, 'Sitemap:') === false) {
         $output .= 'Sitemap: ' . home_url('/sitemap_index.xml') . "\n";
     }
     return $output;
