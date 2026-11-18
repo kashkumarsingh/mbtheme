@@ -168,7 +168,8 @@ add_filter('wp_robots', static function ($robots) {
         return $robots;
     }
     $noindex = false;
-    if (is_attachment() || is_author()) {
+    // Tag archives are thin (no H1, no description, no inbound links).
+    if (is_attachment() || is_author() || is_tag()) {
         $noindex = true;
     }
     if (is_singular('attachment')) {
@@ -190,6 +191,31 @@ add_filter('wpseo_sitemap_exclude_post_type', static function ($excluded, $post_
     }
     return $excluded;
 }, 10, 2);
+
+add_filter('wpseo_sitemap_exclude_taxonomy', static function ($excluded, $taxonomy) {
+    if ($taxonomy === 'post_tag') {
+        return true;
+    }
+    return $excluded;
+}, 10, 2);
+
+// Yoast prints og:image only when the page has an image or a default is set in
+// its Social settings. Fall back to the theme share image so every page has one.
+add_filter('wpseo_add_opengraph_images', static function ($image_container) {
+    if (!is_object($image_container) || !method_exists($image_container, 'add_image')) {
+        return $image_container;
+    }
+    if (method_exists($image_container, 'get_images') && !empty($image_container->get_images())) {
+        return $image_container;
+    }
+    if (function_exists('mbgroupltd_get_og_image_url')) {
+        $url = mbgroupltd_get_og_image_url();
+        if ($url) {
+            $image_container->add_image($url);
+        }
+    }
+    return $image_container;
+});
 
 add_action('template_redirect', static function () {
     if (is_admin()) {
